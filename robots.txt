@@ -3,4 +3,4 @@ Allow: /
 Disallow: /_includes/
 Disallow: /404.html
 
-Sitemap: https://de.ob5.de/sitemap.xml
+Sitemap: https://ob5.de/sitemap.xml
