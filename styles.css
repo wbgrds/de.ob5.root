@@ -591,6 +591,19 @@ footer p {
     border-left-color: #16a766 !important;
 }
 
+.principle-closing {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    color: #73CAFF;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.principle-closing p {
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .costs-table {
         font-size: 0.85rem;
