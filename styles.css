@@ -265,7 +265,14 @@ nav a:hover {
     gap: 2rem;
 }
 
-/* Card Base Styles */
+/* Business Pillars Section */
+#business-pillars {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+
 .pillar-card,
 .contact-card {
     background: rgba(115, 202, 255, 0.05);
