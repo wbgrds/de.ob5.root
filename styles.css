@@ -379,7 +379,8 @@ footer p {
 /* === TRANSPARENCY PAGE === */
 
 .tools-grid,
-.principles-grid {
+.principles-grid,
+.lockin-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
@@ -387,7 +388,8 @@ footer p {
 }
 
 .tool-card,
-.principle-card {
+.principle-card,
+.lockin-card {
     background: rgba(115, 202, 255, 0.05);
     border: 1px solid rgba(115, 202, 255, 0.3);
     border-left: 4px solid var(--text);
@@ -397,20 +399,23 @@ footer p {
 }
 
 .tool-card:hover,
-.principle-card:hover {
+.principle-card:hover,
+.lockin-card:hover {
     background: rgba(115, 202, 255, 0.1);
     transform: translateY(-5px);
 }
 
 .tool-card h3,
-.principle-card h4 {
+.principle-card h4,
+.lockin-card h3 {
     color: var(--text);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
 
 .tool-card p,
-.principle-card p {
+.principle-card p,
+.lockin-card p {
     color: #73CAFF;
     line-height: 1.6;
     font-size: 0.95rem;
