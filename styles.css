@@ -246,7 +246,7 @@ nav a:hover {
 }
 
 /* Pillars Section */
-#pillars {
+#principles {
     max-width: 1200px;
     margin: 0 auto 5rem;
     padding: 0 2rem;
@@ -467,8 +467,8 @@ footer p {
         font-size: 1.1rem;
     }
 
-    #pillars,
-    #contact,
+    #principles,
+    #business-pillars,
     #intro {
         padding: 0 1rem;
     }
