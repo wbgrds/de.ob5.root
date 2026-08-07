@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparency – OB5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="description" content="Transparenz bei OB5 – Code, Entscheidungen, Prozesse sind sichtbar.">
+    <link rel="canonical" href="https://ob5.de/transparency/">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <a href="/" class="header-logo">
+            <img src="/favicon.svg" alt="OB5 Logo" class="logo-icon">
+            <span>OB5</span>
+        </a>
+        <nav class="header-nav">
+            <a href="/">Home</a>
+            <a href="/transparency/">Transparency</a>
+        </nav>
+    </div>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 300px;">
+            <h1>Transparency</h1>
+            <p>Warum machen wir es so? Alles offen.</p>
+        </section>
+
+        <section id="transparency-intro">
+            <p class="intro-text">Transparenz ist nicht optional bei OB5. Wir teilen Code, Entscheidungen, Prozesse – nicht aus Großzügigkeit, sondern weil es die richtige Art ist, zu arbeiten. Keine Black Boxes. Keine versteckten Tricks.</p>
+        </section>
+
+        <section id="transparency-pillars">
+            <h2 class="section-title">Was Transparenz bedeutet</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Code ist öffentlich</h3>
+                    <p>Unsere Projekte sind auf GitHub sichtbar. Du kannst sehen, wie wir bauen, was wir entscheiden – und warum.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3>Prozesse dokumentieren</h3>
+                    <p>Nicht nur das Ergebnis zählt. Wir dokumentieren den Weg dahin – Entscheidungen, Fehler, Lernpunkte.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3>Kommunikation offen</h3>
+                    <p>Meetings, Notizen, Diskussionen – wo möglich, öffentlich. Du weißt, was gerade läuft.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3>Fehler sind Daten</h3>
+                    <p>Wir verstecken Fehler nicht. Sie sind Teil des Lernens. Transparenz macht uns besser.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <h3>Preise & Kosten klar</h3>
+                    <p>Keine versteckten Gebühren. Du weißt, wofür du zahlst und warum.</p>
+                </div>
+
+                <div class="pillar-card contact-card">
+                    <h3>Fragen?</h3>
+                    <p>Transparenz heißt auch: Wir beantworten deine Fragen.</p>
+                    <a href="mailto:hello@ob5.de" class="contact-link">hello@ob5.de</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+    <p>© 2026 OB5.DΞ  by  W Ξ B G U Λ R D S</p>
+</footer>
+
+    <script>
+    // Network Canvas Animation (Partikel-Netzwerk)
+    const canvas = document.getElementById('networkCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 50;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(115, 202, 255, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function drawLines() {
+            ctx.strokeStyle = 'rgba(115, 202, 255, 0.2)';
+            ctx.lineWidth = 1;
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let particle of particles) {
+                particle.update();
+                particle.draw();
+            }
+
+            drawLines();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    }
+    </script>
+</body>
+</html>
