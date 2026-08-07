@@ -230,6 +230,14 @@ nav a:hover {
     margin-bottom: 0.5rem;
 }
 
+.hero h1 .highlight {
+    color: var(--text);
+}
+
+.hero h1 .dim {
+    color: rgba(115, 202, 255, 0.5);
+}
+
 .hero > p {
     position: relative;
     z-index: 10;
