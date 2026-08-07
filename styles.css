@@ -467,7 +467,144 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* === END TRANSPARENCY PAGE === */
+/* === COST TRANSPARENCY === */
+
+.costs-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-radius: 8px;
+}
+
+.costs-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(115, 202, 255, 0.02);
+}
+
+.costs-table thead {
+    background: rgba(115, 202, 255, 0.1);
+    border-bottom: 2px solid rgba(115, 202, 255, 0.3);
+}
+
+.costs-table th {
+    color: var(--text);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.costs-table td {
+    color: #73CAFF;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(115, 202, 255, 0.15);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.costs-table tbody tr:hover {
+    background: rgba(115, 202, 255, 0.05);
+}
+
+.cost-summary {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-left: 4px solid var(--text);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.cost-summary h3 {
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: rgba(115, 202, 255, 0.03);
+    border-left: 3px solid rgba(115, 202, 255, 0.5);
+    border-radius: 4px;
+}
+
+.summary-item.total {
+    background: rgba(115, 202, 255, 0.1);
+    border-left-color: var(--text);
+    padding: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(115, 202, 255, 0.3);
+}
+
+.summary-item .label {
+    color: #73CAFF;
+}
+
+.summary-item.total .label,
+.summary-item.total .value {
+    color: var(--text);
+}
+
+.summary-item .value {
+    color: var(--text);
+    font-weight: 600;
+    text-align: right;
+}
+
+.summary-note {
+    color: #73CAFF;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(115, 202, 255, 0.2);
+}
+
+.summary-note ul {
+    margin: 0.5rem 0 0 0;
+}
+
+.summary-note li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .costs-table {
+        font-size: 0.85rem;
+    }
+
+    .costs-table th,
+    .costs-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .summary-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .summary-item .value {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* === END COST TRANSPARENCY === */
 
 @media (max-width: 1024px) {
     .pillars-grid {

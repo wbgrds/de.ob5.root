@@ -180,6 +180,117 @@
             </div>
         </section>
 
+        <section id="cost-transparency">
+            <h2 class="section-title">Kostenübersicht – Was es kostet</h2>
+            <p class="intro-text" style="text-align: center; margin-bottom: 2rem;">Keine versteckten Gebühren. Hier sind die Kosten für unser Setup. Monatlich. Jährlich. Skalierbar.</p>
+            
+            <div class="costs-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Grundgebühr/Monat</th>
+                            <th>Variable Kosten</th>
+                            <th>Jährlich (ca.)</th>
+                            <th>Notizen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>SIPGATE</strong></td>
+                            <td>0–29€</td>
+                            <td>0,01–0,09€/Min<br>0,05–0,19€/SMS</td>
+                            <td>100–500€</td>
+                            <td>Pay-as-you-go. Nur für tatsächliche Nutzung.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3CX</strong></td>
+                            <td>40–100€</td>
+                            <td>—</td>
+                            <td>480–1200€</td>
+                            <td>Lizenzgebühr. Abhängig von Agenten-Anzahl (1–16+).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>easybell</strong></td>
+                            <td>20–50€</td>
+                            <td>—</td>
+                            <td>240–600€</td>
+                            <td>SIP-Trunk. Inkludierte Minuten oder Flat. Je nach Plan.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Claude API</strong></td>
+                            <td>0€</td>
+                            <td>0,003–0,03€/1K Tokens</td>
+                            <td>100–2000€</td>
+                            <td>Stark nutzungsabhängig. Wenig API-Calls = günstiger. High-Volume = teurer.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitHub</strong></td>
+                            <td>0€ (Public)<br>4–21€ (Private)</td>
+                            <td>—</td>
+                            <td>0–250€</td>
+                            <td>Kostenlos für Public Repos. Private: abhängig von Collaborators.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitHub Pages</strong></td>
+                            <td>0€</td>
+                            <td>—</td>
+                            <td>0€</td>
+                            <td>Komplett kostenlos. Nur Bandbreite-Limit bei sehr hohem Traffic.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Domains (Netcup)</strong></td>
+                            <td>—</td>
+                            <td>5–15€/Jahr<br>pro Domain</td>
+                            <td>15–60€</td>
+                            <td>ob5.de, ob5.dev, adobe5.de = 3 Domains. Beispiel: 45€/Jahr.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Server (Hetzner Cloud)</strong></td>
+                            <td>5–50€</td>
+                            <td>—</td>
+                            <td>60–600€</td>
+                            <td>CPX11 (2 vCPU, 4GB RAM) ca. 5€/Monat. CPX31 ca. 50€/Monat.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cost-summary">
+                <h3>Gesamt-Beispiel: Monatliche Betriebskosten</h3>
+                <div class="summary-breakdown">
+                    <div class="summary-item">
+                        <span class="label">Telefonie (SIPGATE + 3CX + easybell)</span>
+                        <span class="value">80–180€</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">KI-Automation (Claude API)</span>
+                        <span class="value">100–500€</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Code & Hosting (GitHub + Server)</span>
+                        <span class="value">5–50€</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Domains (amortisiert)</span>
+                        <span class="value">~4€</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span class="label"><strong>MONATLICH GESAMT</strong></span>
+                        <span class="value"><strong>189–734€</strong></span>
+                    </div>
+                </div>
+                <p class="summary-note"><strong>Wichtig:</strong> Die tatsächlichen Kosten hängen stark ab von:
+                <ul style="color: #73CAFF; margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Telefonie-Volumen:</strong> Wenig Calls = günstiger, viele Calls = teurer</li>
+                    <li><strong>Claude-Nutzung:</strong> Wenige API-Calls = 100€, hohes Volumen = 2000€+</li>
+                    <li><strong>Server-Größe:</strong> Kleine App = 5€, große Anwendung = 50–500€</li>
+                    <li><strong>Team-Größe:</strong> Mehr GitHub Collaborators = höhere Kosten</li>
+                </ul>
+                </p>
+            </div>
+        </section>
+
         <section id="integration-diagram">
             <h2 class="section-title">Wie sie zusammenhängen</h2>
             <div class="diagram-text">
