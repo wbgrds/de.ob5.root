@@ -295,15 +295,19 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* Contact Section */
-#contact {
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-    padding: 0 2rem;
-}
+
 
 .contact-card {
     text-align: center;
+}
+
+/* 6. Kachel – Kontakt mit grünem Rand */
+.pillar-card.contact-card {
+    border-left-color: #4CAF50;
+}
+
+.pillar-card.contact-card:hover {
+    background: rgba(76, 175, 80, 0.08);
 }
 
 .contact-card .section-title {
