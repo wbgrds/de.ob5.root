@@ -38,7 +38,19 @@ body > main {
     flex: 1;
 }
 
-/* Header Navigation */
+/* Main Sections Design (wie WEBGUARDS) */
+main > section {
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #050f1a45;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 14px;
+    box-shadow: 14px 14px 20px #050f1a, -14px -14px 20px #153b6866;
+}
+
+
 header {
     position: fixed;
     top: 0;
@@ -232,24 +244,11 @@ nav a:hover {
 }
 
 /* Intro Section */
-#intro {
-    max-width: 1000px;
-    margin: 0 auto 4rem;
-    padding: 0 2rem;
-}
-
 .intro-text {
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text);
-}
-
-/* Pillars Section */
-#principles {
-    max-width: 1200px;
-    margin: 0 auto 5rem;
-    padding: 0 2rem;
 }
 
 .section-title {
@@ -263,13 +262,6 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-}
-
-/* Business Pillars Section */
-#business-pillars {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
 }
 
 
@@ -465,11 +457,5 @@ footer p {
 
     .pillar-card h3 {
         font-size: 1.1rem;
-    }
-
-    #principles,
-    #business-pillars,
-    #intro {
-        padding: 0 1rem;
     }
 }
