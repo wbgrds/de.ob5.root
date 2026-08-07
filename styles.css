@@ -351,12 +351,33 @@ nav a:hover {
 
 /* Footer */
 footer {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border-top: 1px solid #050f1a45;
+    font-size: 0.9rem;
+    color: var(--light-text);
+    height: 75px;
+    z-index: 900;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 14px;
+    box-shadow: 14px 14px 20px #050f1a, -14px -14px 20px #153b6866;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
 }
 
 /* Responsive Design */
