@@ -31,41 +31,109 @@
         </section>
 
         <section id="transparency-intro">
-            <p class="intro-text">Transparenz ist nicht optional bei OB5. Wir teilen Code, Entscheidungen, Prozesse – nicht aus Großzügigkeit, sondern weil es die richtige Art ist, zu arbeiten. Keine Black Boxes. Keine versteckten Tricks.</p>
+            <p class="intro-text">Transparenz heißt: Wir zeigen dir, was wir benutzen. Nicht Marketing-Versprechen – faktische Tech-Stack-Offenlegung. Hier sind die Tools, die WEBGUARDS & OB5 antreiben. Warum? Was können sie? Was nicht?</p>
         </section>
 
-        <section id="transparency-pillars">
-            <h2 class="section-title">Was Transparenz bedeutet</h2>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <h3>Code ist öffentlich</h3>
-                    <p>Unsere Projekte sind auf GitHub sichtbar. Du kannst sehen, wie wir bauen, was wir entscheiden – und warum.</p>
-                </div>
+        <section id="tools-stack">
+            <h2 class="section-title">Unser Tech-Stack</h2>
+            <div class="tools-grid">
                 
-                <div class="pillar-card">
-                    <h3>Prozesse dokumentieren</h3>
-                    <p>Nicht nur das Ergebnis zählt. Wir dokumentieren den Weg dahin – Entscheidungen, Fehler, Lernpunkte.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <h3>Kommunikation offen</h3>
-                    <p>Meetings, Notizen, Diskussionen – wo möglich, öffentlich. Du weißt, was gerade läuft.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <h3>Fehler sind Daten</h3>
-                    <p>Wir verstecken Fehler nicht. Sie sind Teil des Lernens. Transparenz macht uns besser.</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <h3>Preise & Kosten klar</h3>
-                    <p>Keine versteckten Gebühren. Du weißt, wofür du zahlst und warum.</p>
+                <!-- SIPGATE -->
+                <div class="tool-card">
+                    <h3>SIPGATE</h3>
+                    <div class="tool-badge">Telefonie & Dashboard</div>
+                    <p><strong>Was:</strong> Cloud-basierte VoIP-Plattform für Telefonie, SMS, Fax – mit REST-API und Web-Dashboard.</p>
+                    
+                    <p><strong>Warum:</strong>
+                    <ul>
+                        <li>Stabil, zuverlässig, Deutsche Infrastruktur</li>
+                        <li>API-First – Integration in eigene Systeme möglich</li>
+                        <li>Transparente Preisgestaltung (pro Minute/SMS)</li>
+                        <li>Keine Vendor Lock-in – Port-away jederzeit</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Wie integriert:</strong> OAuth2-Dashboard für Kal-MCP (KI-Assistenten), REST-API für Custom-Apps, Telefonie-Integration für Kundenwebseiten.</p>
+                    
+                    <p><strong>Nachteile:</strong> Nicht billig für große Mengen. UI teilweise veraltet. Aber: Stabilität > UX-Glanz.</p>
                 </div>
 
-                <div class="pillar-card contact-card">
-                    <h3>Fragen?</h3>
-                    <p>Transparenz heißt auch: Wir beantworten deine Fragen.</p>
-                    <a href="mailto:hello@ob5.de" class="contact-link">hello@ob5.de</a>
+                <!-- 3CX + easybell -->
+                <div class="tool-card">
+                    <h3>3CX + easybell</h3>
+                    <div class="tool-badge">Call Center & VoIP</div>
+                    <p><strong>Was:</strong> 3CX ist eine On-Premise/Cloud-basierte Telefonanlage. easybell stellt SIP-Trunks (Telefonienleitungen) bereit.</p>
+                    
+                    <p><strong>Warum:</strong>
+                    <ul>
+                        <li>3CX: Open Standard (SIP) – nicht proprietär</li>
+                        <li>easybell: Deutsche Carrier, zuverlässig, günstig</li>
+                        <li>Zusammen: Komplette Kontrolle über Telefonie – Call Recording, IVR, Queues, Reporting</li>
+                        <li>Skalierbar – von 1 bis 1000 Agenten</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Wie integriert:</strong> Call-Center für WEBGUARDS-Kundensupport, Recording für Compliance, Webhooks für KI-basierte Call-Routing-Automatisierung.</p>
+                    
+                    <p><strong>Nachteile:</strong> Setup komplex. easybell-Support mittelmäßig. Aber: Bei richtig konfiguriert, läuft es stabil.</p>
+                </div>
+
+                <!-- Claude -->
+                <div class="tool-card">
+                    <h3>Claude (Anthropic)</h3>
+                    <div class="tool-badge">KI & Automation</div>
+                    <p><strong>Was:</strong> LLM von Anthropic – für Textanalyse, Code-Generierung, Kundenkommunikation, Automatisierung.</p>
+                    
+                    <p><strong>Warum:</strong>
+                    <ul>
+                        <li>Beste Qualität (Stand 2026) – Reasoning, Context-Window, Zuverlässigkeit</li>
+                        <li>API mit Tool-Use – Anbindung an externe Systeme (GitHub, Gmail, etc.)</li>
+                        <li>Transparenz bei Safety – Anthropic dokumentiert Ansätze offen</li>
+                        <li>Flexibles Preismodell – Pay-per-Token</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Wie integriert:</strong> Kal-MCP (KI-Assistenten für Kundensupport), Code-Review & Refactoring, Dokumentation automatisieren, Kundenwebseiten mit KI-Features ausstatten.</p>
+                    
+                    <p><strong>Nachteile:</strong> API-Kosten addieren sich. Rate-Limits bei hohem Volumen. Aber: Kosten-Nutzen ist fair.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="integration-diagram">
+            <h2 class="section-title">Wie sie zusammenhängen</h2>
+            <div class="diagram-text">
+                <p>
+                    <strong>SIPGATE</strong> (Telefonie) → 
+                    <strong>3CX/easybell</strong> (Call Routing) → 
+                    <strong>Claude API</strong> (KI-gesteuert) → 
+                    <strong>Custom Apps</strong> (Kundenwebseiten, Automation)
+                </p>
+                <p>
+                    Ein Kunde ruft an → easybell leitet in 3CX → 3CX sendet Webhook → Claude analysiert Anfrage → Automatische Antwort oder Eskalation → Response über SIPGATE.
+                </p>
+            </div>
+        </section>
+
+        <section id="why-these">
+            <h2 class="section-title">Warum diese Tools? Kein Marketing-Blabla.</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h4>Standard over Proprietary</h4>
+                    <p>SIP, REST-API, OAuth2 – offene Standards. Nicht eingesperrt in einem Vendor.</p>
+                </div>
+                <div class="principle-card">
+                    <h4>Reliable over Trendy</h4>
+                    <p>Wir wählen Tools, die 5+ Jahre zuverlässig laufen – nicht das neueste Startup-Hype-Tool.</p>
+                </div>
+                <div class="principle-card">
+                    <h4>Transparent Pricing</h4>
+                    <p>Keine versteckten Gebühren. Kosten sind kalkulierbar. Wir zahlen fair, du zahlst fair.</p>
+                </div>
+                <div class="principle-card">
+                    <h4>Control over Convenience</h4>
+                    <p>Manchmal ist Setup komplexer. Aber: Du hast Kontrolle. Das ist es wert.</p>
                 </div>
             </div>
         </section>

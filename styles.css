@@ -376,6 +376,91 @@ footer p {
 }
 
 /* Responsive Design */
+/* === TRANSPARENCY PAGE === */
+
+.tools-grid,
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tool-card,
+.principle-card {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-left: 4px solid var(--text);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.tool-card:hover,
+.principle-card:hover {
+    background: rgba(115, 202, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.tool-card h3,
+.principle-card h4 {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.tool-card p,
+.principle-card p {
+    color: #73CAFF;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.tool-card ul {
+    color: #73CAFF;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.tool-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.tool-badge {
+    display: inline-block;
+    background: rgba(77, 184, 255, 0.15);
+    border: 1px solid rgba(77, 184, 255, 0.4);
+    color: #4db8ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+#integration-diagram {
+    text-align: center;
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.diagram-text p {
+    color: #73CAFF;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.diagram-text strong {
+    color: var(--text);
+}
+
+/* === END TRANSPARENCY PAGE === */
+
 @media (max-width: 1024px) {
     .pillars-grid {
         grid-template-columns: repeat(2, 1fr);
