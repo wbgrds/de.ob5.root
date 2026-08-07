@@ -474,46 +474,6 @@ footer p {
 
 /* === COST TRANSPARENCY === */
 
-.costs-table {
-    overflow-x: auto;
-    margin: 2rem 0;
-    border: 1px solid rgba(115, 202, 255, 0.3);
-    border-radius: 8px;
-}
-
-.costs-table table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(115, 202, 255, 0.02);
-}
-
-.costs-table thead {
-    background: rgba(115, 202, 255, 0.1);
-    border-bottom: 2px solid rgba(115, 202, 255, 0.3);
-}
-
-.costs-table th {
-    color: var(--text);
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.costs-table td {
-    color: #73CAFF;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(115, 202, 255, 0.15);
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.costs-table tbody tr:hover {
-    background: rgba(115, 202, 255, 0.05);
-}
-
 .cost-summary {
     background: rgba(115, 202, 255, 0.05);
     border: 1px solid rgba(115, 202, 255, 0.3);
@@ -684,6 +644,61 @@ footer p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 0;
+}
+
+/* Kostenübersicht Tabelle */
+.costs-table-wrapper {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(115, 202, 255, 0.2);
+}
+
+.costs-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #73CAFF;
+}
+
+.costs-table thead {
+    background: rgba(77, 184, 255, 0.1);
+}
+
+.costs-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    color: #4db8ff;
+    border-bottom: 2px solid rgba(77, 184, 255, 0.3);
+}
+
+.costs-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(115, 202, 255, 0.1);
+}
+
+.costs-table tbody tr:hover {
+    background: rgba(77, 184, 255, 0.05);
+}
+
+.costs-table tbody tr:last-child {
+    background: rgba(22, 167, 102, 0.08);
+}
+
+.costs-table tbody tr:last-child td {
+    border-bottom: none;
+    color: #16a766;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .costs-table {
+        font-size: 0.9rem;
+    }
+
+    .costs-table th,
+    .costs-table td {
+        padding: 0.75rem 0.5rem;
+    }
 }
 
 @media (max-width: 768px) {
