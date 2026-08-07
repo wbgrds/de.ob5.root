@@ -582,6 +582,9 @@ footer p {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(115, 202, 255, 0.2);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .costs-table {
