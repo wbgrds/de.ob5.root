@@ -336,24 +336,6 @@ nav a:hover {
 }
 
 /* Legal Section */
-#legal {
-    max-width: 1000px;
-    margin: 3rem auto 0;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border);
-}
-
-#legal p {
-    margin: 0.5rem 0;
-}
-
-#legal strong {
-    color: var(--text);
-}
-
 /* Footer */
 footer {
     position: fixed;
