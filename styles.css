@@ -48,6 +48,8 @@ main > section {
     margin-bottom: 2rem;
     border-radius: 14px;
     box-shadow: 14px 14px 20px #050f1a, -14px -14px 20px #153b6866;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
