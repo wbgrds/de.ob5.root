@@ -776,3 +776,161 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* OB5 Content Sections */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.hero-content .tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.pillars {
+    margin: 4rem 0;
+}
+
+.pillars h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+}
+
+.pillar {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--accent-blue);
+    background-color: rgba(45, 85, 130, 0.2);
+    border-radius: 4px;
+}
+
+.pillar h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.pillar p {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.contact {
+    text-align: center;
+    margin: 5rem 0 3rem 0;
+    padding: 3rem 2rem;
+    background-color: rgba(45, 85, 130, 0.15);
+    border-radius: 8px;
+}
+
+.contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-blue);
+    color: var(--bg);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: var(--text);
+    transform: translateY(-2px);
+}
+
+.legal-info {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+}
+
+.legal-info p {
+    margin: 0.5rem 0;
+}
+
+.legal-info strong {
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .tagline {
+        font-size: 1rem;
+    }
+
+    .pillars h2 {
+        font-size: 1.5rem;
+    }
+
+    .pillar {
+        padding: 1rem;
+    }
+
+    .pillar h3 {
+        font-size: 1.1rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+    }
+
+    .contact h2 {
+        font-size: 1.4rem;
+    }
+}
