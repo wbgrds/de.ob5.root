@@ -592,15 +592,28 @@ footer p {
 }
 
 .principle-closing {
+    grid-column: 1 / -1;
     text-align: center;
-    margin-top: 2rem;
     padding: 2rem;
+    background: linear-gradient(135deg, rgba(77, 184, 255, 0.08) 0%, rgba(22, 167, 102, 0.08) 100%);
+    border-left: 4px solid #16a766;
+    border-radius: 8px;
     color: #73CAFF;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.principle-closing h3 {
+    color: #16a766;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
 .principle-closing p {
+    font-size: 1.05rem;
+    line-height: 1.6;
     margin: 0;
 }
 
