@@ -587,6 +587,10 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
+.lockin-principle {
+    border-left-color: #16a766 !important;
+}
+
 @media (max-width: 768px) {
     .costs-table {
         font-size: 0.85rem;
