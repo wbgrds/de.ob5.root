@@ -159,9 +159,6 @@ nav a:hover {
     align-items: center;
 }
 
-#mobile-nav {
-    display: none;
-}
 
 #hamburger {
     display: none;
@@ -192,7 +189,13 @@ nav a:hover {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-#mobile-nav {
+#nav-desktop {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#nav-mobile {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -204,7 +207,7 @@ nav a:hover {
     border-radius: 0 0 14px 14px;
 }
 
-#mobile-nav.active {
+#nav-mobile.active {
     display: flex;
 }
 
