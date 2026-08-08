@@ -1137,26 +1137,27 @@ footer p {
     margin-top: 2rem;
 }
 
-.principle-box {
-    background: rgba(77, 184, 255, 0.1);
-    border: 1px solid rgba(77, 184, 255, 0.3);
-    padding: 1.5rem;
+.principle-card {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-left: 4px solid #4db8ff;
+    padding: 2rem;
     border-radius: 8px;
     transition: all 0.3s;
 }
 
-.principle-box:hover {
-    background: rgba(77, 184, 255, 0.15);
-    transform: translateY(-3px);
+.principle-card:hover {
+    background: rgba(115, 202, 255, 0.1);
+    transform: translateY(-5px);
 }
 
-.principle-box h4 {
+.principle-card h3 {
     color: #4db8ff;
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
 
-.principle-box p {
+.principle-card p {
     color: #73CAFF;
     line-height: 1.6;
     font-size: 0.95rem;
