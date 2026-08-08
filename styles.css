@@ -153,6 +153,16 @@ nav a:hover {
     display: block;
 }
 
+#nav-desktop {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#mobile-nav {
+    display: none;
+}
+
 #hamburger {
     display: none;
     flex-direction: column;
