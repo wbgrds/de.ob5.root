@@ -1016,6 +1016,155 @@ footer p {
 
 /* === END COST TRANSPARENCY === */
 
+/* === PROTOTYPING SEITE === */
+
+/* Prototyping Process Grid – 6 Phasen */
+.proto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.proto-card {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-top: 3px solid #4db8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.proto-card:hover {
+    background: rgba(115, 202, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.proto-phase {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(77, 184, 255, 0.2);
+    border: 2px solid #4db8ff;
+    border-radius: 50%;
+    color: #4db8ff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.proto-card h3 {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.proto-card p,
+.proto-card ul {
+    color: #73CAFF;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.proto-card ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.proto-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Examples Grid – 2 pro Reihe */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.example-card {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-left: 4px solid var(--text);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.example-card:hover {
+    background: rgba(115, 202, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.example-card h3 {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.example-desc {
+    color: #4db8ff;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.example-card p,
+.example-card ul {
+    color: #73CAFF;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.example-card ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.example-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Principles Grid – 2 pro Reihe */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.principle-box {
+    background: rgba(77, 184, 255, 0.1);
+    border: 1px solid rgba(77, 184, 255, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.principle-box:hover {
+    background: rgba(77, 184, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.principle-box h4 {
+    color: #4db8ff;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.principle-box p {
+    color: #73CAFF;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* === END PROTOTYPING === */
+
 @media (max-width: 1024px) {
     .pillars-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1023,6 +1172,18 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .proto-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hero {
         min-height: 300px;
         padding: 2rem 1rem;
@@ -1066,6 +1227,10 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .proto-grid {
+        grid-template-columns: 1fr;
+    }
+
     .tools-grid {
         grid-template-columns: 1fr;
     }
