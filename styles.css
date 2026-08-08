@@ -625,6 +625,116 @@ footer p {
 
 /* === COLLABORATION CASES === */
 
+/* Partner Cases Grid – 2 pro Reihe */
+.cases-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.partner-card {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-left: 4px solid #73CAFF;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.partner-card:hover {
+    background: rgba(115, 202, 255, 0.1);
+    transform: translateY(-5px);
+    border-left-color: #4db8ff;
+}
+
+.partner-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    background: rgba(115, 202, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid rgba(115, 202, 255, 0.15);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.partner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.partner-card h3 {
+    color: #4db8ff;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.partner-subtitle {
+    color: #16a766;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.partner-tools {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tool-tag {
+    display: inline-block;
+    background: rgba(77, 184, 255, 0.15);
+    border: 1px solid rgba(77, 184, 255, 0.4);
+    color: #4db8ff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.partner-description {
+    color: #a8d8ff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.partner-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+}
+
+.partner-links a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(77, 184, 255, 0.1);
+    border: 1px solid rgba(77, 184, 255, 0.3);
+    border-radius: 4px;
+    color: #73CAFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.partner-links a:hover {
+    background: rgba(77, 184, 255, 0.2);
+    border-color: #4db8ff;
+    color: #4db8ff;
+}
+
 .case-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -760,6 +870,18 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .cases-container {
+        grid-template-columns: 1fr;
+    }
+
+    .partner-card {
+        padding: 1.5rem;
+    }
+
+    .partner-logo {
+        min-height: 100px;
+    }
+
     .case-header {
         grid-template-columns: 1fr;
         gap: 2rem;
