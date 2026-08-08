@@ -388,7 +388,13 @@ footer p {
 /* Responsive Design */
 /* === TRANSPARENCY PAGE === */
 
-.tools-grid,
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 .principles-grid,
 .lockin-cards {
     display: grid;
@@ -880,6 +886,10 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .cases-container {
         grid-template-columns: 1fr;
     }
@@ -991,6 +1001,10 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
     body {
         padding-top: 60px;
         padding-bottom: 60px;
