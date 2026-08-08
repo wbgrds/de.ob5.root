@@ -1261,3 +1261,61 @@ footer p {
         font-size: 1.1rem;
     }
 }
+
+/* SECURITY SEITE */
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.security-card {
+    background: rgba(115, 202, 255, 0.05);
+    border: 1px solid rgba(115, 202, 255, 0.3);
+    border-left: 4px solid #4db8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.security-card:hover {
+    background: rgba(115, 202, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.security-card h3 {
+    color: #4db8ff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.security-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.security-card li {
+    color: #73CAFF;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.security-card li strong {
+    color: #4db8ff;
+}
+
+.security-card p {
+    color: #73CAFF;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .security-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

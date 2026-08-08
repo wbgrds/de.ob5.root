@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototyping – OB5</title>
+    <title>Security & Integrity – OB5</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css?v=2">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <meta name="description" content="Prototyping bei OB5 – Iterativ, experimental, lernen durch Bauen.">
-    <link rel="canonical" href="https://ob5.de/prototyping/">
+    <meta name="description" content="Security & Integrity bei OB5 – Zero Trust, Verschlüsselung, Transparenz.">
+    <link rel="canonical" href="https://ob5.de/security/">
 </head>
 <body>
     <header>
@@ -42,7 +42,7 @@
         <a href="/collaboration">Collaboration</a>
         <a href="/documentation">Documentation</a>
         <a href="/prototyping">Prototyping</a>
-            <a href="/security">Security & Integrity</a>
+        <a href="/security">Security & Integrity</a>
         <div class="nav-dropdown">
             <a href="#" class="nav-dropdown-toggle">Datenschutz & Recht ▼</a>
             <div class="nav-dropdown-menu">
@@ -57,181 +57,259 @@
     <main>
         <section class="hero" style="min-height: 300px;">
             <canvas id="networkCanvas"></canvas>
-            <h1>Prototyping</h1>
-            <p>Alles ist iterativ. Fehler sind Daten. Lernen durch Bauen.</p>
+            <h1>Security & Integrity</h1>
+            <p>Zero Trust. Verschlüsselt. Kontrolliert. Nachvollziehbar.</p>
         </section>
 
-        <section id="prototyping-intro">
-            <p class="intro-text">Prototyping ist nicht "erst alles planen, dann bauen". Prototyping ist: schnell bauen, Feedback erhalten, anpassen. Jedes Projekt lehrt das nächste. Fehler sind nicht Schande – sie sind der schnellste Weg zum Lernen.</p>
+        <section id="security-intro">
+            <p class="intro-text">Sicherheit ist nicht eine Funktion – sie ist eine Architektur-Entscheidung. Wir bauen mit Zero Trust, aktualisieren regelmäßig, loggen alles, und stellen Transparenz über Geheimnis.</p>
         </section>
 
-        <!-- 6-PHASEN PROZESS -->
-        <section id="prototyping-process">
-            <h2 class="section-title">Der Prototyping-Prozess (6 Phasen)</h2>
-            <div class="proto-grid">
+        <!-- SICHERHEITSPRINZIPIEN -->
+        <section id="security-principles">
+            <h2 class="section-title">Unsere Sicherheitsprinzipien</h2>
+            <div class="security-grid">
 
-                <div class="proto-card">
-                    <div class="proto-phase">1</div>
-                    <h3>Problem Definition</h3>
-                    <p>Was versuchen wir zu verstehen oder zu lösen?</p>
+                <div class="security-card">
+                    <h3>🔐 Zero Trust Architektur</h3>
+                    <p>Nichts ist automatisch vertraut. Jeder Zugriff wird authentifiziert, autorisiert und auditiert – auch intern.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>🔑 Verschlüsselung überall</h3>
+                    <p>Transit (TLS 1.3), Rest (AES-256), Secrets (Vault). Keine Backdoors, keine Exceptions.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>📋 Logging ist Pflicht</h3>
+                    <p>Alle Zugriffe, alle Änderungen, alle Fehler werden geloggt. Der Log ist die Quelle der Wahrheit.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>👁️ Transparenz vor Geheimnis</h3>
+                    <p>Wir verstecken nicht, sondern offenbaren: Architektur, Processes, Sicherheitsmaßnahmen sind öffentlich dokumentiert.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>🔄 Regelmäßige Updates</h3>
+                    <p>Sicherheit ist nicht "once" – es ist kontinuierlich. Patches, Config-Reviews, Penetration Testing gehören zur Routine.</p>
+                </div>
+
+                <div class="security-card">
+                    <h3>🚨 Incident Response Plan</h3>
+                    <p>Wir haben einen Plan für Sicherheitsvorfälle. Der Plan wird getestet, kommuniziert und ständig verbessert.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INFRASTRUCTURE SECURITY -->
+        <section id="infrastructure-security">
+            <h2 class="section-title">Infrastructure Security</h2>
+            <div class="security-grid">
+
+                <div class="security-card">
+                    <h3>🖥️ Homeserver + Cloud Hybrid</h3>
                     <ul>
-                        <li>User Interviews & Research</li>
-                        <li>Problemraum eingrenzen</li>
-                        <li>Hypothesen formulieren</li>
-                        <li>Erfolgs-Kriterien definieren</li>
+                        <li>Lokale Homeserver (4x) für kritische Daten</li>
+                        <li>Segmentierung: Prod vs. Dev vs. Testing</li>
+                        <li>Firewall: Whitelist-only Ingress</li>
+                        <li>VLAN Isolation zwischen Systemen</li>
                     </ul>
                 </div>
 
-                <div class="proto-card">
-                    <div class="proto-phase">2</div>
-                    <h3>Rapid Prototyping</h3>
-                    <p>Low-fidelity, schnell, kein Perfektionismus.</p>
+                <div class="security-card">
+                    <h3>🔌 VPS & Cloud (ionos)</h3>
                     <ul>
-                        <li>Sketches & Wireframes</li>
-                        <li>Quick Code Prototypes</li>
-                        <li>Mockups & Demos</li>
-                        <li>Minimal Viable Prototype</li>
+                        <li>Public-facing Apps nur auf Cloud</li>
+                        <li>SSH-Key Only (no passwords)</li>
+                        <li>Fail2Ban + DDoS Protection</li>
+                        <li>Private Network für Backend-Kommunikation</li>
                     </ul>
                 </div>
 
-                <div class="proto-card">
-                    <div class="proto-phase">3</div>
-                    <h3>Testing & Learning</h3>
-                    <p>Real-World Feedback vom echten Nutzer.</p>
+                <div class="security-card">
+                    <h3>🔐 Secrets Management</h3>
                     <ul>
-                        <li>User Testing Sessions</li>
-                        <li>Feedback sammeln</li>
-                        <li>Metriken tracken</li>
-                        <li>Learnings dokumentieren</li>
+                        <li>Keine Hard-coded Credentials</li>
+                        <li>HashiCorp Vault für Secrets</li>
+                        <li>API Keys: Rotated quarterly</li>
+                        <li>OAuth2 für Service-to-Service Auth</li>
                     </ul>
                 </div>
 
-                <div class="proto-card">
-                    <div class="proto-phase">4</div>
-                    <h3>Iterate</h3>
-                    <p>Basierend auf Feedback: anpassen, verfeinern, wieder testen.</p>
+                <div class="security-card">
+                    <h3>🛡️ Network Security</h3>
                     <ul>
-                        <li>Prioritäten neu setzen</li>
-                        <li>Design anpassen</li>
-                        <li>Feature-Set reduzieren/erweitern</li>
-                        <li>Wieder zu Phase 2 oder 3</li>
-                    </ul>
-                </div>
-
-                <div class="proto-card">
-                    <div class="proto-phase">5</div>
-                    <h3>Decision Point</h3>
-                    <p>Was haben wir gelernt? Welcher Weg geht weiter?</p>
-                    <ul>
-                        <li>In Produktion gehen?</li>
-                        <li>Pivot durchführen?</li>
-                        <li>Verwerfen & neu starten?</li>
-                        <li>Weitere Iteration?</li>
-                    </ul>
-                </div>
-
-                <div class="proto-card">
-                    <div class="proto-phase">6</div>
-                    <h3>Production & Monitor</h3>
-                    <p>Das Lernen stoppt nicht nach Launch.</p>
-                    <ul>
-                        <li>Verhalten in Production tracken</li>
-                        <li>Nutzerdaten analysieren</li>
-                        <li>Früher pivoten, später skalieren</li>
-                        <li>Knowhow für nächstes Projekt</li>
+                        <li>TLS 1.3 für alle External Communication</li>
+                        <li>mTLS für Service Mesh</li>
+                        <li>Certificate Pinning wo möglich</li>
+                        <li>No unencrypted internal traffic</li>
                     </ul>
                 </div>
 
             </div>
         </section>
 
-        <!-- PROTOTYPING PRINCIPLES -->
-        <section id="prototyping-principles">
-            <h2 class="section-title">Unser Prototyping-Ethos</h2>
-            <div class="principles-grid">
+        <!-- DATENPROTECTION & DATENSCHUTZ -->
+        <section id="data-protection">
+            <h2 class="section-title">Datenprotection & Datenschutz (GDPR)</h2>
+            <div class="security-grid">
 
-                <div class="principle-card">
-                    <h3>🚀 Schnelligkeit vor Perfektion</h3>
-                    <p>Ein funktionierendes Prototype heute ist mehr wert als eine perfekte Lösung in 3 Monaten.</p>
+                <div class="security-card">
+                    <h3>📍 Datenort & Residenz</h3>
+                    <ul>
+                        <li>Personendaten: EU-only (Germany primary)</li>
+                        <li>Backup: Geografisch verteilt (EU)</li>
+                        <li>Keine US-Cloud für sensitive Data</li>
+                        <li>Data Processing Agreements mit allen Vendors</li>
+                    </ul>
                 </div>
 
-                <div class="principle-card">
-                    <h3>📊 Fehler sind Daten</h3>
-                    <p>Jede Fehlentwicklung, jedes "das funktioniert nicht" ist kostbare Rückmeldung. Kein Grund für Schande – es ist das, wofür Prototyping existiert.</p>
+                <div class="security-card">
+                    <h3>🗑️ Datenminimierung & Retention</h3>
+                    <ul>
+                        <li>Nur notwendige Daten erfasst</li>
+                        <li>Retention Policies: 1–2 Jahre Standard</li>
+                        <li>Logs: 90 Tage Hot, 1 Jahr Archive</li>
+                        <li>Automatische Löschung nach Retention</li>
+                    </ul>
                 </div>
 
-                <div class="principle-card">
-                    <h3>🤝 Nutzern zuhören</h3>
-                    <p>Der beste Test ist ein echter Nutzer mit echtem Problem. Nicht unser Plan – ihre Realität.</p>
+                <div class="security-card">
+                    <h3>👤 User Rights & Privacy</h3>
+                    <ul>
+                        <li>Right to Access: 30 Tage Antwortzeit</li>
+                        <li>Right to Erasure: Vollständige Löschung implementiert</li>
+                        <li>Right to Portability: Datenexport in JSON/CSV</li>
+                        <li>Privacy Notices: Einfach, verständlich, transparent</li>
+                    </ul>
                 </div>
 
-                <div class="principle-card">
-                    <h3>🔄 Iterativ denken</h3>
-                    <p>Keine Lösung ist für die Ewigkeit. Wir bauen flexibel, damit Anpassungen einfach sind.</p>
-                </div>
-
-                <div class="principle-card">
-                    <h3>📝 Lessons dokumentieren</h3>
-                    <p>Was wir gelernt haben – positiv wie negativ – wird dokumentiert. Der nächste Prototype braucht diese Insights.</p>
-                </div>
-
-                <div class="principle-card">
-                    <h3>🎯 MVP-Fokus</h3>
-                    <p>Minimum Viable Product heißt: Was ist das absolute Minimum, um die zentrale Hypothese zu testen?</p>
+                <div class="security-card">
+                    <h3>⚖️ Compliance & Audits</h3>
+                    <ul>
+                        <li>GDPR: Vollständig implementiert</li>
+                        <li>Internal Audits: Jährlich</li>
+                        <li>Third-Party Audits: Bei Bedarf</li>
+                        <li>DPA & Privacy Agreements: Für alle Processor</li>
+                    </ul>
                 </div>
 
             </div>
         </section>
 
-        <!-- ANWENDUNGSBEISPIELE -->
-        <section id="prototyping-examples">
-            <h2 class="section-title">Anwendungsbeispiele bei OB5</h2>
-            <div class="examples-grid">
+        <!-- INCIDENT RESPONSE -->
+        <section id="incident-response">
+            <h2 class="section-title">Incident Response & Crisis Management</h2>
+            <div class="security-grid">
 
-                <div class="example-card">
-                    <h3>Strandkörbe Rosenke</h3>
-                    <p class="example-desc">Von Stift & Papier zu Android App</p>
+                <div class="security-card">
+                    <h3>🚨 Incident Classification</h3>
                     <ul>
-                        <li>V1: Papier-basiertes System dokumentiert</li>
-                        <li>V2: Web-Form Prototype (schnell, 1 Tag)</li>
-                        <li>V3: User Testing mit Kunden (vor Ort)</li>
-                        <li>V4: Android App mit Offline-Support</li>
-                        <li>Iterationen: 4+ weitere Versionen nach Launch</li>
+                        <li><strong>P1 (Critical):</strong> Datenbruch, RCE, Downtime</li>
+                        <li><strong>P2 (High):</strong> Elevated Access, Unauthorized Access</li>
+                        <li><strong>P3 (Medium):</strong> Configuration Issues, Log Anomalies</li>
+                        <li><strong>P4 (Low):</strong> Information Disclosure, Minor Bugs</li>
                     </ul>
                 </div>
 
-                <div class="example-card">
-                    <h3>KOGGESOUND</h3>
-                    <p class="example-desc">DJ-Plattform von Grund auf</p>
+                <div class="security-card">
+                    <h3>📋 Response Process</h3>
                     <ul>
-                        <li>V1: Static HTML mit Kontaktform</li>
-                        <li>V2: Event-Katalog Prototype</li>
-                        <li>V3: Booking-Logik testen (Users/DJs)</li>
-                        <li>V4: Payment Integration (SIPGATE Invoice)</li>
-                        <li>Lessons: Was DJs wirklich brauchen vs. angenommen</li>
+                        <li>1. Detect & Alert (Automated Monitoring)</li>
+                        <li>2. Investigate & Isolate (5 min SLA P1)</li>
+                        <li>3. Mitigate (Stopgap within 15 min)</li>
+                        <li>4. Remediate & Root Cause (24–48h)</li>
+                        <li>5. Communicate & Document (Postmortem)</li>
                     </ul>
                 </div>
 
-                <div class="example-card">
-                    <h3>Kfz Meisterwerkstatt Röck</h3>
-                    <p class="example-desc">Interne Tools für Werkstatt-Teams</p>
+                <div class="security-card">
+                    <h3>📢 Communication Plan</h3>
                     <ul>
-                        <li>V1: Einfaches Terminkalender System</li>
-                        <li>V2: Kundenmanagement Prototype</li>
-                        <li>V3: Real-World Test mit Team (2 Wochen)</li>
-                        <li>V4: Rechnungsgenerierung & Archiv</li>
-                        <li>Feedback-Schleife: Alle 2 Wochen Update</li>
+                        <li>Internally: Slack Alerts + War Room</li>
+                        <li>Customers: Email + Status Page (within 1h P1)</li>
+                        <li>Regulators: GDPR Breach Notification (72h)</li>
+                        <li>Public: Transparent Postmortem (within 1 week)</li>
                     </ul>
                 </div>
 
-                <div class="example-card">
-                    <h3>Enny's</h3>
-                    <p class="example-desc">Mystery Project in Iteration 2–3</p>
+                <div class="security-card">
+                    <h3>🔍 Post-Incident Review</h3>
                     <ul>
-                        <li>Phase: Rapid Prototyping & Testing</li>
-                        <li>Approach: Kurze Iterationen, Weekly Updates</li>
-                        <li>Learning: Validierung des Konzepts live</li>
-                        <li>Next: Production-Ready Version Q3 2026</li>
+                        <li>Root Cause Analysis: Immer durchgeführt</li>
+                        <li>Prevention: Welche Kontrollen hätten das verhindert?</li>
+                        <li>Improvements: Actionable Items mit Owner & Deadline</li>
+                        <li>Knowledge Sharing: Lessons in Docs & Training</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BEST PRACTICES -->
+        <section id="security-practices">
+            <h2 class="section-title">Security Best Practices & Standards</h2>
+            <div class="security-grid">
+
+                <div class="security-card">
+                    <h3>🧑‍💻 Developer Security</h3>
+                    <ul>
+                        <li>Code Review: Alle PRs reviewed (min. 2 eyes)</li>
+                        <li>SAST: Static Analysis Tools (SonarQube, Semgrep)</li>
+                        <li>Dependency Scanning: Regelmäßige Updates</li>
+                        <li>Secret Scanning: Gitguardian für versehentliche Commits</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <h3>🧪 Testing & Validation</h3>
+                    <ul>
+                        <li>Security Unit Tests: Jedes Feature</li>
+                        <li>Integration Testing: Across Services</li>
+                        <li>Penetration Testing: Annual (+ Ad-Hoc wenn nötig)</li>
+                        <li>Chaos Engineering: Failure Scenarios simuliert</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <h3>🔑 Authentication & Authorization</h3>
+                    <ul>
+                        <li>MFA: Required für alle Accounts</li>
+                        <li>OAuth2 / OpenID Connect: Modern Standards</li>
+                        <li>RBAC: Least Privilege Access Model</li>
+                        <li>Session Management: Secure Tokens, Short TTL</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <h3>📊 Monitoring & Alerting</h3>
+                    <ul>
+                        <li>SIEM: Centralized Log Aggregation</li>
+                        <li>Threat Detection: Anomaly & Signature-based</li>
+                        <li>Alert Fatigue Prevention: Tuned Thresholds</li>
+                        <li>On-Call Escalation: 24/7 Coverage für P1/P2</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <h3>📚 Training & Awareness</h3>
+                    <ul>
+                        <li>Security Training: Annually mandatory</li>
+                        <li>Phishing Simulation: Quarterly</li>
+                        <li>Incident Drills: 2x yearly (Red Team exercises)</li>
+                        <li>Knowledge Base: Security Wikis & Best Practices</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <h3>🔗 Supply Chain Security</h3>
+                    <ul>
+                        <li>Vendor Assessment: Security Reviews vor Integration</li>
+                        <li>Dependency Tracking: SBOM (Software Bill of Materials)</li>
+                        <li>License Compliance: Legal & Security Review</li>
+                        <li>Continuous Monitoring: Vendor Vulnerabilities tracked</li>
                     </ul>
                 </div>
 
@@ -240,9 +318,9 @@
 
         <!-- Kontakt Sektion -->
         <section style="text-align: center;">
-            <h2 class="section-title">Am Prototyping interessiert?</h2>
-            <p class="intro-text">Prototyping ist keine mystische Kunst – es ist ein Handwerk, das man lernen kann. Wir unterstützen Partner & Kunden dabei, ihre Ideen schnell zu validieren.</p>
-            <a href="https://github.com/wbgrds" class="contact-link" target="_blank">GitHub – Alle Prototypes</a>
+            <h2 class="section-title">Sicherheit ist kein Zustand – es ist ein Prozess</h2>
+            <p class="intro-text">Wir treiben unsere Sicherheitskultur jeden Tag voran. Fragen zu unseren Maßnahmen? Schreib uns auf GitHub oder kontaktier uns direkt.</p>
+            <a href="https://github.com/wbgrds" class="contact-link" target="_blank">GitHub – Security & Incident Issues</a>
         </section>
 
     </main>
