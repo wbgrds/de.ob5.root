@@ -1,0 +1,3 @@
+# GitHub Pages Jekyll Config
+theme: null
+exclude: ['.git', '.github', 'process-includes.py']
