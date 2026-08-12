@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Process includes
-        run: python3 process-includes.py
-      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
