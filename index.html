@@ -578,61 +578,66 @@
         <!-- Pricing Section -->
         <section class="pricing-section" id="pricing">
             <h2>Transparente Preise</h2>
-            <p class="pricing-intro">Setup 199€ einmalig. Dann monatlich nach Anschlüssen. Keine versteckten Gebühren.</p>
+            <p class="pricing-intro">Sipgate Basis: 17,95€/Anschluss/Monat. Setup 199€ einmalig. Keine versteckten Gebühren.</p>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Starter</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">1–3 Anschlüsse</p>
-                    <div class="pricing-value">ab 45€</div>
-                    <p>/Monat</p>
+                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">1–2 Anschlüsse</p>
+                    <div class="pricing-value">ab 18€</div>
+                    <p>/Monat (1× 17,95€)</p>
                     <ul>
                         <li>Telefonie</li>
-                        <li>SMS</li>
                         <li>Call History</li>
+                        <li>Mobile App</li>
                     </ul>
-                    <button class="btn btn-primary" style="width: 100%;">Anfrage</button>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Kontakt: sipgate@webguards.de')">Anfrage</button>
                 </div>
 
                 <div class="pricing-card">
                     <h3>Small</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">5–8 Anschlüsse</p>
-                    <div class="pricing-value">ab 95€</div>
-                    <p>/Monat</p>
+                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">3–5 Anschlüsse</p>
+                    <div class="pricing-value">54–90€</div>
+                    <p>/Monat (3–5× 17,95€)</p>
                     <ul>
-                        <li>Alles von Starter</li>
-                        <li>Fax</li>
+                        <li>Telefonie</li>
+                        <li>SMS & Fax</li>
                         <li>IVR Routing</li>
+                        <li>WEBGUARDS Support</li>
                     </ul>
-                    <button class="btn btn-primary" style="width: 100%;">Anfrage</button>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Kontakt: sipgate@webguards.de')">Anfrage</button>
                 </div>
 
                 <div class="pricing-card">
                     <h3>Medium</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">10–15 Anschlüsse</p>
-                    <div class="pricing-value">ab 185€</div>
-                    <p>/Monat</p>
+                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">5–10 Anschlüsse</p>
+                    <div class="pricing-value">90–180€</div>
+                    <p>/Monat (5–10× 17,95€)</p>
                     <ul>
                         <li>Alles von Small</li>
                         <li>API & Webhooks</li>
                         <li>Custom Integration</li>
                     </ul>
-                    <button class="btn btn-primary" style="width: 100%;">Anfrage</button>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Kontakt: sipgate@webguards.de')">Anfrage</button>
                 </div>
 
                 <div class="pricing-card">
                     <h3>Enterprise</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">20+ Anschlüsse</p>
-                    <div class="pricing-value">Custom</div>
-                    <p>Maßgeschneidert</p>
+                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">15+ Anschlüsse</p>
+                    <div class="pricing-value">270€+</div>
+                    <p>/Monat (15+× 17,95€)</p>
                     <ul>
                         <li>Alles von Medium</li>
                         <li>Premium Support</li>
                         <li>Dedizierte Integration</li>
                     </ul>
-                    <button class="btn btn-secondary" style="width: 100%;">Kontakt</button>
+                    <button class="btn btn-secondary" style="width: 100%;" onclick="location.href='mailto:sipgate@webguards.de'">Kontakt</button>
                 </div>
             </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: #b0d9ff; font-size: 0.9rem;">
+                Sipgate Basis: 17,95€/Anschluss/Monat • Setup: 199€ einmalig • Premium Apps: +20€/Nutzer/Monat (MS Teams, etc.)
+            </p>
         </section>
 
         <!-- Calculator -->
@@ -682,10 +687,10 @@
                             <td>1–2 Wochen</td>
                         </tr>
                         <tr>
-                            <td><strong>Kosten (5 Nummern)</strong></td>
-                            <td><strong>95€/Mo</strong></td>
-                            <td>150€/Mo</td>
-                            <td>140€/Mo</td>
+                            <td><strong>Kosten (5 Nummern/Mo)</strong></td>
+                            <td><strong>90€ + Setup 199€</strong></td>
+                            <td>150–180€</td>
+                            <td>140–160€</td>
                             <td>200€+ Server</td>
                         </tr>
                         <tr>
@@ -858,7 +863,7 @@
 
         animate();
 
-        // Calculator
+        // Calculator (Sipgate: 17,95€/Anschluss)
         const peopleInput = document.getElementById('people');
         const currentInput = document.getElementById('current');
         const savingsDisplay = document.getElementById('savings');
@@ -868,16 +873,18 @@
             const people = parseInt(peopleInput.value) || 0;
             const current = parseInt(currentInput.value) || 0;
             
-            const sipgateEstimate = Math.ceil(people * 18);
+            // Sipgate Basis: 17,95€/Anschluss/Monat
+            const sipgateMonthly = people * 17.95;
+            const sipgateEstimate = Math.round(sipgateMonthly);
             const savings = Math.max(0, current - sipgateEstimate);
             
             savingsDisplay.textContent = savings + '€';
             
             if (savings > 0) {
-                const yearSavings = savings * 12 - 199; // minus einmalig Setup
+                const yearSavings = Math.round(savings * 12 - 199); // minus einmalig Setup
                 savingsInfo.textContent = `Monatliche Ersparniss: ${savings}€ × 12 - Setup 199€ = ${yearSavings}€ im Jahr 1`;
             } else {
-                savingsInfo.textContent = `Setup 199€ + ${sipgateEstimate}€/Monat. Danach sparen!`;
+                savingsInfo.textContent = `Setup 199€ + ${sipgateEstimate}€/Monat Sipgate (${people}× 17,95€). Danach sparen!`;
             }
         }
 
