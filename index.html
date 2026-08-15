@@ -3,64 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sipgate Telefonie — Moderne Cloud-Telefonanlage | ob5.de</title>
-    <meta name="description" content="Moderne Telefonie für Dein Team. Sipgate + WEBGUARDS. 30-50% günstiger, deutsche Infrastruktur, API-ready.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Sipgate Business Telefonie — ob5.de</title>
     <style>
-        /* Hero angepasst für Sipgate */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-            background: linear-gradient(180deg, #0d2541 0%, #1a3a5c 100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 900px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            color: #73CAFF;
-            margin-bottom: 1rem;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .subtitle {
-            font-size: 1.1rem;
-            color: #b0d9ff;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d2541 0%, #1a3a52 100%);
+            color: #e0e0e0;
             line-height: 1.6;
         }
 
-        .hero-buttons {
+        nav {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(115, 202, 255, 0.2);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #73CAFF;
+        }
+
+        nav a {
+            color: #b0d9ff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #73CAFF;
+        }
+
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #b0d9ff;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
@@ -68,1034 +71,272 @@
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-            font-weight: 700;
+            padding: 0.75rem 2rem;
             border: none;
             border-radius: 6px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #4db8ff 0%, #2a8fd9 100%);
+            background: #73CAFF;
             color: #0d2541;
+            font-weight: 600;
         }
 
         .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(77, 184, 255, 0.5);
+            background: #5fb8ed;
         }
 
         .btn-secondary {
-            background: transparent;
-            color: #4db8ff;
-            border: 2px solid #4db8ff;
+            background: rgba(115, 202, 255, 0.2);
+            color: #73CAFF;
+            border: 1px solid #73CAFF;
         }
 
         .btn-secondary:hover {
-            background: rgba(77, 184, 255, 0.1);
-            color: white;
+            background: rgba(115, 202, 255, 0.3);
         }
 
-        /* Features Section */
-        .features-section {
+        section {
             padding: 4rem 2rem;
-            background: linear-gradient(180deg, #0d2541 0%, #1a3a5c 100%);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .features-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            margin-bottom: 1rem;
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
             text-align: center;
-            font-weight: 700;
-        }
-
-        .features-intro {
-            color: #b0d9ff;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            line-height: 1.6;
+            color: #fff;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .feature-card {
-            background: rgba(20, 50, 80, 0.6);
-            border-left: 4px solid #4db8ff;
+            background: rgba(13, 37, 65, 0.8);
             padding: 2rem;
             border-radius: 8px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 70, 110, 0.8);
-            border-left-color: #73CAFF;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #4db8ff;
-            margin-bottom: 1rem;
+            border-left: 3px solid #73CAFF;
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
             color: #73CAFF;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         .feature-card p {
             color: #b0d9ff;
-            line-height: 1.6;
             font-size: 0.95rem;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, #0d2541 0%, #1a3a5c 100%);
-        }
-
-        .benefits-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .benefits-intro {
-            color: #b0d9ff;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            background: rgba(20, 50, 80, 0.6);
-            border: 1px solid rgba(77, 184, 255, 0.3);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .benefit-item:hover {
-            background: rgba(30, 70, 110, 0.8);
-            border-color: #73CAFF;
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .benefit-item h3 {
-            font-size: 1.2rem;
-            color: #73CAFF;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .benefit-item p {
-            color: #b0d9ff;
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: 4rem 2rem;
-            background: rgba(20, 100, 180, 0.05);
-            border-top: 1px solid #4db8ff;
-            border-bottom: 1px solid #4db8ff;
-        }
-
-        .pricing-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .pricing-intro {
-            color: #b0d9ff;
-            font-size: 1.05rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            text-align: center;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .pricing-card {
-            background: rgba(20, 50, 80, 0.6);
-            border: 2px solid rgba(77, 184, 255, 0.3);
+            background: rgba(13, 37, 65, 0.6);
             padding: 2rem;
             border-radius: 8px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .pricing-card:hover {
-            border-color: #73CAFF;
-            background: rgba(30, 70, 110, 0.8);
+            border: 1px solid rgba(115, 202, 255, 0.2);
         }
 
         .pricing-card h3 {
-            font-size: 1.3rem;
-            color: #4db8ff;
-            margin-bottom: 1rem;
+            color: #73CAFF;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .pricing-value {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-card p {
-            color: #b0d9ff;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 600;
+            margin: 1rem 0;
         }
 
         .pricing-card ul {
-            text-align: left;
-            color: #b0d9ff;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            list-style: none;
+            margin: 1.5rem 0;
         }
 
         .pricing-card li {
+            color: #b0d9ff;
             margin-bottom: 0.5rem;
-            list-style: none;
-            padding-left: 1.5rem;
-            position: relative;
+            font-size: 0.9rem;
         }
 
         .pricing-card li:before {
-            content: "✓";
-            color: #73CAFF;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Calculator */
-        .calculator-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, #0d2541 0%, #1a3a5c 100%);
-        }
-
-        .calculator-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .calc-container {
-            max-width: 600px;
-            margin: 3rem auto;
-            background: rgba(20, 50, 80, 0.6);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid rgba(77, 184, 255, 0.3);
-        }
-
-        .calc-input {
-            margin-bottom: 1.5rem;
-        }
-
-        .calc-input label {
-            display: block;
+            content: "✓ ";
             color: #73CAFF;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-right: 0.5rem;
         }
 
-        .calc-input input {
-            width: 100%;
-            padding: 10px;
-            background: rgba(13, 37, 65, 0.5);
-            border: 1px solid rgba(77, 184, 255, 0.3);
-            color: white;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .calc-result {
-            background: linear-gradient(135deg, #4db8ff 0%, #2a8fd9 100%);
-            color: #0d2541;
+        footer {
+            text-align: center;
             padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .calc-result h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .calc-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        /* Comparison */
-        .comparison-section {
-            padding: 4rem 2rem;
-            background: rgba(20, 100, 180, 0.05);
-            border-top: 1px solid #4db8ff;
-        }
-
-        .comparison-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .comparison-intro {
+            border-top: 1px solid rgba(115, 202, 255, 0.2);
             color: #b0d9ff;
-            text-align: center;
-            margin-bottom: 2rem;
+            font-size: 0.9rem;
         }
 
-        .comparison-table {
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: rgba(20, 50, 80, 0.4);
-            border: 1px solid rgba(77, 184, 255, 0.3);
-        }
-
-        table th {
-            background: rgba(77, 184, 255, 0.2);
+        footer a {
             color: #73CAFF;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 1px solid rgba(77, 184, 255, 0.3);
+            text-decoration: none;
         }
 
-        table td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(77, 184, 255, 0.2);
-            color: #b0d9ff;
-        }
-
-        table tr:hover {
-            background: rgba(77, 184, 255, 0.1);
-        }
-
-        .check {
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        .cross {
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-
-        /* Testimonials */
-        .testimonials-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, #0d2541 0%, #1a3a5c 100%);
-        }
-
-        .testimonials-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            background: rgba(20, 50, 80, 0.6);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid #4db8ff;
-        }
-
-        .testimonial-quote {
-            color: #b0d9ff;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            color: #73CAFF;
-            font-weight: 600;
-        }
-
-        .testimonial-company {
-            color: #4db8ff;
-            font-size: 0.85rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #0d2541 0%, #1a3a5c 100%);
-            text-align: center;
-            border-top: 1px solid #4db8ff;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            color: #73CAFF;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            color: #b0d9ff;
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-
-            .features-section h2,
-            .benefits-section h2,
-            .pricing-section h2,
-            .calculator-section h2,
-            .comparison-section h2,
-            .testimonials-section h2,
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .features-grid,
-            .benefits-grid,
-            .pricing-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .comparison-table {
-                font-size: 0.85rem;
-            }
-
-            table th,
-            table td {
-                padding: 0.75rem;
-            }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="/" class="logo">
-                <svg height="35" version="1.1" viewBox="0 0 164 30.047" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 35px;">
-                    <g stroke-width="0">
-                        <path d="m14.201 30.02c-1.8571-0.12221-3.6299-0.56214-5.2914-1.3132-0.93135-0.42102-2.1241-1.1084-2.383-1.3733-0.72035-0.73719-0.49508-1.9523 0.44796-2.4154 0.20819-0.10222 0.29613-0.11952 0.60863-0.11952 0.44988 0 0.64256 0.0677 1.2248 0.43038 1.374 0.85588 2.9211 1.4163 4.6494 1.6843 0.65655 0.10179 2.6357 0.10179 3.2922 0 2.2158-0.34357 4.1862-1.1991 5.8742-2.5506 0.47509-0.38042 1.4091-1.3134 1.779-1.7772 1.2328-1.5456 2.1006-3.4376 2.4522-5.3464 0.27395-1.4876 0.25784-3.1274-0.04527-4.6199-0.24548-1.2082-0.86755-2.7959-1.4559-3.7156-0.21839-0.34146-0.28725-0.55829-0.28811-0.90729-0.0022-0.59761 0.31086-1.0936 0.85819-1.3631 0.25258-0.12436 0.32698-0.14083 0.63104-0.13976 0.5722 0.00198 0.96929 0.23742 1.3583 0.80518 0.41113 0.60008 1.0035 1.8619 1.3553 2.8868 0.55208 1.6087 0.80568 3.1495 0.80313 4.8799-0.0022 0.97119-0.04787 1.5632-0.19186 2.446-0.87994 5.3926-4.6806 9.9045-9.8603 11.705-1.8045 0.62736-3.9632 0.92539-5.8185 0.80332zm-3.7806-4.7505c-0.48075-0.1346-0.8751-0.46769-1.0918-0.92214-0.10779-0.22603-0.13608-0.34672-0.14871-0.63269-0.020005-0.45714 0.073061-0.76171 0.335-1.0956 0.15735-0.20052 11.734-11.481 12.943-12.611 0.18162-0.16991 0.4245-0.35666 0.53963-0.41501 1.0131-0.51337 2.2233 0.1084 2.4235 1.2451 0.05826 0.33106 1.01e-4 0.67191-0.17616 1.0317-0.11784 0.2405-0.70444 0.82265-6.6687 6.6179-3.5967 3.4947-6.6181 6.4168-6.7143 6.4937-0.3654 0.29218-0.98483 0.41601-1.4415 0.28819zm-7.3773-1.7842c-0.5165-0.16371-0.87566-0.60761-1.4756-1.8236-0.82874-1.6797-1.2987-3.3057-1.5091-5.2211-0.11038-1.0044-0.059665-2.6437 0.11704-3.7817 0.65033-4.1892 3.0676-7.9173 6.64-10.241 3.8002-2.4717 8.5712-3.0897 12.843-1.6635 0.41357 0.13809 0.98405 0.35057 1.2677 0.47218 0.98087 0.42056 2.3902 1.2219 2.6491 1.5062 0.54501 0.59848 0.51948 1.5455-0.05629 2.0866-0.24658 0.23174-0.36194 0.29913-0.66061 0.38595-0.47231 0.13732-0.8918 0.039009-1.5239-0.35725-1.3848-0.86799-3.0102-1.4595-4.7056-1.7125-0.6202-0.092566-2.0436-0.12548-2.7121-0.06279-2.3869 0.22391-4.5918 1.1135-6.4627 2.6077-0.46933 0.37484-1.4038 1.3092-1.7786 1.7786-1.3448 1.684-2.2042 3.6694-2.5481 5.8873-0.097446 0.62814-0.10965 2.561-0.02009 3.1585 0.2587 1.7241 0.76942 3.2191 1.531 4.4815 0.1324 0.21956 0.2607 0.45157 0.28513 0.51565 0.21647 0.56848 0.073722 1.22-0.35567 1.6236-0.24218 0.22757-0.35841 0.29675-0.63792 0.37976-0.29972 0.08902-0.56094 0.08303-0.88684-0.02024zm3.1219-2.6318c-0.33007-0.09561-0.52861-0.21149-0.7648-0.44634-0.59327-0.58995-0.66723-1.5396-0.17077-2.193 0.057956-0.07635 3.0623-3.0118 6.6764-6.5232 7.4837-7.2712 6.7878-6.6598 7.5809-6.6598 0.42399 0 0.47113 0.00887 0.73593 0.13929 0.34075 0.16775 0.64254 0.47511 0.80336 0.81824 0.10207 0.21773 0.11518 0.29724 0.11518 0.69796 0 0.82358 0.67185 0.096985-6.8408 7.3975-3.6078 3.5059-6.6192 6.4201-6.6922 6.4759-0.38548 0.2953-1.0031 0.42086-1.4432 0.2934z" fill="#73caff"></path>
-                    </g>
-                </svg>
-            </a>
-            <nav id="nav-desktop">
-                <a href="#features">Features</a>
-                <a href="#benefits">Vorteile</a>
-                <a href="#pricing">Preise</a>
-                <a href="#calculator">Kalkulator</a>
-                <a href="#contact" class="cta-button" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Demo buchen</a>
-            </nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">ob5.de</div>
+        <div>
+            <a href="#features">Features</a>
+            <a href="#pricing">Preise</a>
+            <a href="#contact">Kontakt</a>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <canvas class="hero-canvas" id="heroCanvas"></canvas>
-            <div class="hero-content">
-                <h1>Moderne Telefonie für Dein Team</h1>
-                <p class="tagline">Sipgate Cloud-Telefonanlage + WEBGUARDS Management</p>
-                <p class="subtitle">
-                    Deutsche Infrastruktur • 30-50% günstiger • API-ready • Kein Vertrag
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' })">
-                        Ersparnisse berechnen
-                    </button>
-                    <a href="mailto:sipgate@webguards.de" class="btn btn-secondary">
-                        Kostenlose Demo
-                    </a>
-                </div>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Sipgate Business Telefonie</h1>
+        <p>Cloud-Telefonie für Dein Unternehmen. Schnell, sicher, flexibel.</p>
+        <div class="cta-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Demo anfragen</button>
+            <a href="https://sipgate.de" class="btn btn-secondary" target="_blank">Zu Sipgate.de</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Sipgate Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Call Monitor</h3>
+                <p>Echtzeit-Übersicht aller Anrufe und Teilnehmer</p>
             </div>
-        </section>
-
-        <!-- Prepaid Model Section -->
-        <section style="padding: 4rem 1.5rem; background: linear-gradient(135deg, rgba(115, 202, 255, 0.05) 0%, rgba(13, 37, 65, 0.3) 100%); text-align: center;">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="margin-bottom: 1.5rem;">So funktioniert Sipgate Prepaid</h2>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                    <div style="background: rgba(13, 37, 65, 0.6); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #73CAFF;">
-                        <h3 style="color: #73CAFF; margin-bottom: 0.5rem;">1. Fixkosten berechnen</h3>
-                        <p>z.B. 5 User × 17,95€ = 52,80€/Monat</p>
-                    </div>
-                    
-                    <div style="background: rgba(13, 37, 65, 0.6); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #73CAFF;">
-                        <h3 style="color: #73CAFF; margin-bottom: 0.5rem;">2. Aufrunden (Puffer)</h3>
-                        <p>Kunde lädt typischerweise 60€ auf (Puffer für SMS, Add-ons)</p>
-                    </div>
-                    
-                    <div style="background: rgba(13, 37, 65, 0.6); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #73CAFF;">
-                        <h3 style="color: #73CAFF; margin-bottom: 0.5rem;">3. Transparent nutzen</h3>
-                        <p>Kein Überraschungen. Puffer wird durch SMS/Fax/Extras aufgebraucht.</p>
-                    </div>
-                </div>
-                
-                <p style="color: #b0d9ff; font-size: 0.95rem; line-height: 1.6;">
-                    <strong>Vorteil für deinen Kunden:</strong> Volle Transparenz. Er sieht genau, was verbraucht wird. Keine versteckten Gebühren wie bei klassischen Anbietern. Der Puffer gibt ihm Luft für SMS, Fax oder Premium-Features, ohne gleich die nächste Ebene buchen zu müssen.
-                </p>
+            <div class="feature-card">
+                <h3>Call History</h3>
+                <p>Vollständiges Anrufprotokoll mit Dauer und Datum</p>
             </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="features-section" id="features">
-            <h2>Features deines Sipgate-Accounts</h2>
-            <p class="features-intro">Alles was du brauchst. Nichts was du nicht brauchst.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📞</div>
-                    <h3>Live Call Monitor</h3>
-                    <p>Dashboard mit aktiven Anrufen. Wer spricht, wie lange, wohin? Real-time.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Call History & Reports</h3>
-                    <p>Alle Anrufe, SMS, Faxe im Überblick. Export, Filter, Statistiken.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Visual Routing (IVR)</h3>
-                    <p>"Drücke 1 für Sales, 2 für Support" — visuell gesteuert, kein Code.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile App</h3>
-                    <p>Anrufe über dein Handy mit deiner Geschäftsnummer. Von überall.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔌</div>
-                    <h3>API & Webhooks</h3>
-                    <p>Anrufe an dein CRM, Automatisierung, Custom Workflows. Volle Kontrolle.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">✉️</div>
-                    <h3>SMS, Fax & mehr</h3>
-                    <p>Nicht nur Telefonie. SMS-Versand, Fax-to-Email. Alles integriert.</p>
-                </div>
+            <div class="feature-card">
+                <h3>Sprachmenü (IVR)</h3>
+                <p>Automatische Anrufverwaltung ohne Mensch</p>
             </div>
-        </section>
-
-        <!-- Warum Sipgate Section -->
-        <section class="benefits-section" id="benefits">
-            <h2>Warum Sipgate & WEBGUARDS statt klassischen Verträgen?</h2>
-            <p class="benefits-intro">Nicht einfach günstiger. Fundamental besser.</p>
-
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">⏱️</div>
-                    <h3>Schneller Rollout</h3>
-                    <p><strong>3–5 Tage</strong> von Unterschrift bis Live</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: 2–3 Wochen Wartezeit</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔗</div>
-                    <h3>Kein Vertrag</h3>
-                    <p><strong>Monatlich kündbar</strong>, kein Commitment</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: 24 Monate bindend</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">📈</div>
-                    <h3>Infinite Skalierbarkeit</h3>
-                    <p>Eine Nummer in <strong>5 Minuten</strong> hinzufügen</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Wochen, Techniker-Besuch</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🖥️</div>
-                    <h3>Keine Hardware</h3>
-                    <p><strong>100% Cloud</strong>. Kein Server, keine Wartung</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Teure Hardware, Updates, Backup</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔌</div>
-                    <h3>API & Webhooks</h3>
-                    <p>Anrufe an <strong>dein CRM</strong>, Automatisierung, Custom Workflows</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Nur proprietäre Integration möglich</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">📱</div>
-                    <h3>Echte Mobile App</h3>
-                    <p>Geschäftsnummer auf <strong>jedem Handy</strong> (iOS/Android)</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Separate SIM-Karten oder komplexe Workarounds</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌍</div>
-                    <h3>Deutsche Infrastruktur</h3>
-                    <p><strong>100% DSGVO-konform</strong>, keine Daten in USA</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Oft internationale Clouds</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">💰</div>
-                    <h3>30–50% günstiger</h3>
-                    <p><strong>17,95€/Anschluss</strong> vs. 30–40€ klassisch</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Ohne versteckte Setup-, Technik- oder Migrationkosten</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚙️</div>
-                    <h3>Automatisierung</h3>
-                    <p>Visual Routing, Webhooks, <strong>Workflows ohne Code</strong></p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Termin mit Techniker oder externe Entwickler</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">👤</div>
-                    <h3>Keine Techniker nötig</h3>
-                    <p><strong>WEBGUARDS macht's</strong>, du fokussierst dich auf Geschäft</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: IT-Team oder teurer externer Support</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Transparentes Dashboard</h3>
-                    <p><strong>Echtzeitdaten</strong> zu Anrufen, Kosten, Nutzung</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Intransparente Rechnungen, keine Live-Daten</p>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">📞</div>
-                    <h3>Deutsch Support</h3>
-                    <p><strong>Sipgate + WEBGUARDS</strong> — beide sprechen deine Sprache</p>
-                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Call-Center im Ausland, lange Wartezeiten</p>
-                </div>
+            <div class="feature-card">
+                <h3>Mobile App</h3>
+                <p>Geschäftsnummer auf jedem Smartphone</p>
             </div>
-        </section>
+            <div class="feature-card">
+                <h3>API & Webhooks</h3>
+                <p>Integration in bestehende Systeme und CRM</p>
+            </div>
+            <div class="feature-card">
+                <h3>SMS & Fax</h3>
+                <p>Inklusive Versand aus der Cloud</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Pricing Section -->
-        <section class="pricing-section" id="pricing">
-            <h2>Transparente Preise</h2>
-            <p class="pricing-intro"><strong>Prepaid-Modell:</strong> Sipgate business L 17,95€/User/Monat. Kunden laden sich selbst auf (Puffer nach oben). Setup 199€ einmalig. Keine versteckten Gebühren, volle Transparenz.</p>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>business S</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">Einstieg</p>
-                    <div class="pricing-value">12,95€</div>
-                    <p>/User/Monat (mind. 2 Anschlüsse)</p>
-                    <ul>
-                        <li>2 Anschlüsse pro User</li>
-                        <li>Telefonie</li>
-                        <li>Call History</li>
-                        <li>Mobile App</li>
-                        <li>150 Funktionen</li>
-                    </ul>
-                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Kontakt: sipgate@webguards.de')">Demo buchen</button>
-                </div>
-
-                <div class="pricing-card" style="border: 2px solid #73CAFF;">
-                    <div style="background: #73CAFF; color: #0d2541; padding: 0.5rem; border-radius: 4px; font-weight: 600; text-align: center; margin-bottom: 1rem;">⭐ Bestseller</div>
-                    <h3>business L</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">Beliebt bei SMBs</p>
-                    <div class="pricing-value">17,95€</div>
-                    <p>/User/Monat (mind. 2 Anschlüsse)</p>
-                    <ul>
-                        <li>Alles von business S</li>
-                        <li>Festnetz-Flatrate DE</li>
-                        <li>Sprachmenü (IVR)</li>
-                        <li>Besetzlampenfeld</li>
-                        <li>Conversation Intelligence</li>
-                    </ul>
-                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Kontakt: sipgate@webguards.de')">Demo buchen</button>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>business XL</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">Premium</p>
-                    <div class="pricing-value">22,95€</div>
-                    <p>/User/Monat (mind. 2 Anschlüsse)</p>
-                    <ul>
-                        <li>Alles von business L</li>
-                        <li>Festnetz-Flatrate EU</li>
-                        <li>Erweiterte AI-Features</li>
-                        <li>Premium Support</li>
-                    </ul>
-                    <button class="btn btn-primary" style="width: 100%;" onclick="alert('Kontakt: sipgate@webguards.de')">Demo buchen</button>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Enterprise</h3>
-                    <p style="color: #b0d9ff; font-size: 0.9rem; margin-bottom: 0.5rem;">Große Firmen</p>
-                    <div class="pricing-value">Custom</div>
-                    <p>Maßgeschneidert</p>
-                    <ul>
-                        <li>MS Teams-Integration</li>
-                        <li>AI-Statistiken</li>
-                        <li>SSO/SAML 2.0</li>
-                        <li>Dedicated Support</li>
-                    </ul>
-                    <button class="btn btn-secondary" style="width: 100%;" onclick="location.href='mailto:sipgate@webguards.de'">Angebot anfordern</button>
-                </div>
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>Sipgate Pakete</h2>
+        <p style="text-align: center; color: #b0d9ff; margin-bottom: 2rem;">Aktuelle Preise von sipgate.de</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>business S</h3>
+                <div class="pricing-value">12,95€</div>
+                <p style="color: #b0d9ff; font-size: 0.9rem;">/User/Monat</p>
+                <ul>
+                    <li>2 Anschlüsse pro User</li>
+                    <li>Telefonie</li>
+                    <li>Call History</li>
+                    <li>Mobile App</li>
+                    <li>150 Funktionen</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Infos</button>
             </div>
 
-            <p style="text-align: center; margin-top: 2rem; color: #b0d9ff; font-size: 0.9rem;">
-                <strong>Preise pro User/Monat (mind. 2 Anschlüsse).</strong><br>Zusatzanschlüsse: 4,95€/Stück • Setup: 199€ (einmalig)
-            </p>
-        </section>
-
-        <!-- Calculator -->
-        <section class="calculator-section" id="calculator">
-            <h2>ROI-Kalkulator</h2>
-            <div class="calc-container">
-                <div class="calc-input">
-                    <label for="people">Wie viele Leute brauchen Telefonie?</label>
-                    <input type="number" id="people" placeholder="z.B. 5" value="5" min="1" max="100">
-                </div>
-
-                <div class="calc-input">
-                    <label for="current">Aktuelle Kosten (€/Monat)?</label>
-                    <input type="number" id="current" placeholder="z.B. 200" value="200" min="0">
-                </div>
-
-                <div class="calc-result">
-                    <h3>Deine monatliche Ersparniss</h3>
-                    <div class="calc-value" id="savings">0€</div>
-                    <p id="savings-info" style="margin-top: 1rem; font-size: 0.9rem;">Jahr 1 Gesamt: 0€</p>
-                </div>
+            <div class="pricing-card" style="border: 2px solid #73CAFF;">
+                <div style="background: #73CAFF; color: #0d2541; padding: 0.5rem; border-radius: 4px; font-weight: 600; text-align: center; margin-bottom: 1rem;">⭐ Beliebt</div>
+                <h3>business L</h3>
+                <div class="pricing-value">17,95€</div>
+                <p style="color: #b0d9ff; font-size: 0.9rem;">/User/Monat</p>
+                <ul>
+                    <li>Alles von business S</li>
+                    <li>Festnetz-Flatrate DE</li>
+                    <li>Sprachmenü (IVR)</li>
+                    <li>Besetzlampenfeld</li>
+                    <li>Conversation Intelligence</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Infos</button>
             </div>
-        </section>
 
-        <!-- Comparison -->
-        <section class="comparison-section">
-            <h2>Sipgate + WEBGUARDS vs. Alternativen</h2>
-            <p class="comparison-intro">Ehrlicher Vergleich. Wir sind nicht die billigsten — wir sind die besten.</p>
-            
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Sipgate + WG</th>
-                            <th>Telekom</th>
-                            <th>Vodafone</th>
-                            <th>3CX</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Setup-Zeit</strong></td>
-                            <td><strong>3–5 Tage</strong></td>
-                            <td>2–3 Wochen</td>
-                            <td>2–3 Wochen</td>
-                            <td>1–2 Wochen</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Kosten (5 User/Mo)</strong></td>
-                            <td><strong>Ø 95€ Aufladung*</strong></td>
-                            <td>200–250€</td>
-                            <td>180–220€</td>
-                            <td>300€+ Server</td>
-                        </tr>
-                        <tr style="background: rgba(115, 202, 255, 0.1);">
-                            <td colspan="5" style="font-size: 0.85rem; color: #b0d9ff; text-align: left;">* Sipgate Fixkosten: 89,75€ (5 User × 17,95€). Kunde lädt Puffer auf (z.B. 95€ für SMS/Add-ons). WEBGUARDS Provision: 10% der Aufladung. Setup 199€ einmalig.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>API & Webhooks</strong></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                            <td><span class="cross">✗</span></td>
-                            <td><span class="check">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>SMS + Fax</strong></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="check">✓</span></td>
-                            <td><span class="cross">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Skalierbarkeit</strong></td>
-                            <td><strong>Trivial</strong></td>
-                            <td>Kompliziert</td>
-                            <td>Kompliziert</td>
-                            <td>Komplex</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Support</strong></td>
-                            <td><strong>WEBGUARDS + Sipgate</strong></td>
-                            <td>Telekom Support</td>
-                            <td>Vodafone Support</td>
-                            <td>DIY</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="pricing-card">
+                <h3>business XL</h3>
+                <div class="pricing-value">22,95€</div>
+                <p style="color: #b0d9ff; font-size: 0.9rem;">/User/Monat</p>
+                <ul>
+                    <li>Alles von business L</li>
+                    <li>Festnetz-Flatrate EU</li>
+                    <li>Erweiterte AI-Features</li>
+                    <li>Premium Support</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Infos</button>
             </div>
-        </section>
 
-        <!-- Testimonials -->
-        <section class="testimonials-section">
-            <h2>Das sagen echte Kunden</h2>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-quote">
-                        "Vorher 200€/Monat bei der Telekom. Mit Sipgate + WEBGUARDS: 95€. Und die App ist viel besser. Nach einer Woche haben sich alle ans Team gewöhnt."
-                    </div>
-                    <div class="testimonial-author">Jens K.</div>
-                    <div class="testimonial-company">Makler, München • 8 Nummern</div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-quote">
-                        "Wir haben ein kleines Support-Team. Sipgate + WEBGUARDS: Setup 3 Tage, dann war alles klar. Die Visual Routing ist genau das, was wir brauchten."
-                    </div>
-                    <div class="testimonial-author">Sarah L.</div>
-                    <div class="testimonial-company">Support-Team, Hamburg • 5 Nummern</div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-quote">
-                        "Als Agentur brauchen wir flexible Nummern für Kunden-Kampagnen. Mit Sipgate ist das trivial. Die API ist großartig für CRM-Integration."
-                    </div>
-                    <div class="testimonial-author">Marcus D.</div>
-                    <div class="testimonial-company">Digital-Agentur, Berlin • 12 Nummern</div>
-                </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="pricing-value">Custom</div>
+                <p style="color: #b0d9ff; font-size: 0.9rem;">Maßgeschneidert</p>
+                <ul>
+                    <li>MS Teams-Integration</li>
+                    <li>AI-Statistiken</li>
+                    <li>SSO/SAML 2.0</li>
+                    <li>Dedicated Support</li>
+                </ul>
+                <button class="btn btn-secondary" style="width: 100%;" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Anfrage</button>
             </div>
-        </section>
+        </div>
 
-        <!-- CTA Section -->
-        <section class="cta-section" id="contact">
-            <h2>Bereit für moderne Telefonie?</h2>
-            <p>Kostenlose Demo (15 min) oder direkt Angebot.</p>
-            <div class="hero-buttons">
-                <a href="mailto:sipgate@webguards.de" class="btn btn-primary">
-                    Email: sipgate@webguards.de
-                </a>
-                <a href="tel:+4921163555666" class="btn btn-secondary">
-                    Anrufen: 0211 - 63555666
-                </a>
-            </div>
-            <p style="color: #b0d9ff; margin-top: 2rem; font-size: 0.9rem;">
-                Kostenlos, unverbindlich, kein Verkaufsgespräch. Wir zeigen dir in 15 min, wie es funktioniert.
-            </p>
-        </section>
-    </main>
+        <p style="text-align: center; margin-top: 2rem; color: #b0d9ff; font-size: 0.9rem;">
+            Preise pro User/Monat. Zusatzanschlüsse 4,95€/Stück. <br>
+            <a href="https://sipgate.de/preise" target="_blank" style="color: #73CAFF;">Weitere Infos auf sipgate.de/preise →</a>
+        </p>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" style="text-align: center;">
+        <h2>Kontakt</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">Fragen zu Sipgate oder Setup?</p>
+        <p style="margin-bottom: 1rem;">
+            <strong>Email:</strong> <a href="mailto:sipgate@webguards.de" style="color: #73CAFF;">sipgate@webguards.de</a>
+        </p>
+        <p>
+            <strong>Partner:</strong> Sipgate Partner | <a href="https://sipgate.de" target="_blank" style="color: #73CAFF;">sipgate.de</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 ob5.de by WEBGUARDS UG. Sipgate Partner. <a href="/datenschutz/">Datenschutz</a> • <a href="/impressum/">Impressum</a></p>
-        </div>
+        <p>&copy; 2026 ob5.de — Sipgate Partner via WEBGUARDS UG</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            <a href="https://sipgate.de" target="_blank">sipgate.de</a> | 
+            <a href="https://webguards.de" target="_blank">webguards.de</a>
+        </p>
     </footer>
-
-    <script>
-        // Canvas Animation (wie OB5)
-        const canvas = document.getElementById('heroCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        let particles = [];
-        const particleCount = 50;
-        const connectionDistance = 180;
-
-        class Particle {
-            constructor(x, y) {
-                this.x = x;
-                this.y = y;
-                this.vx = (Math.random() - 0.5) * 1.5;
-                this.vy = (Math.random() - 0.5) * 1.5;
-                this.radius = Math.random() * 2 + 0.5;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                
-                this.x = Math.max(0, Math.min(canvas.width, this.x));
-                this.y = Math.max(0, Math.min(canvas.height, this.y));
-            }
-
-            draw(ctx) {
-                ctx.fillStyle = '#4db8ff';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
-        }
-
-        function drawConnections() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < connectionDistance) {
-                        const opacity = 1 - (distance / connectionDistance);
-                        ctx.strokeStyle = `rgba(77, 184, 255, ${opacity * 0.6})`;
-                        ctx.lineWidth = 1.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            particles.forEach(p => {
-                p.update();
-                p.draw(ctx);
-            });
-
-            drawConnections();
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Calculator (Sipgate Prepaid: Kunden laden auf, WEBGUARDS bekommt 10% Provision)
-        const peopleInput = document.getElementById('people');
-        const currentInput = document.getElementById('current');
-        const savingsDisplay = document.getElementById('savings');
-        const savingsInfo = document.getElementById('savings-info');
-
-        function updateCalculator() {
-            const users = parseInt(peopleInput.value) || 0;
-            const current = parseInt(currentInput.value) || 0;
-            
-            // Sipgate business L: 17,95€/User/Monat (incl. 2 Anschlüsse)
-            // Kunden laden typischerweise rund auf (z.B. 52,80€ → 60€)
-            // Ø Aufladung: Fixkosten + ~13% Puffer
-            const sipgateFixkosten = users * 17.95;
-            const sipgateAufladung = Math.ceil(sipgateFixkosten / 5) * 5; // Rund auf 5er
-            const savings = Math.max(0, current - sipgateFixkosten);
-            
-            savingsDisplay.textContent = savings + '€';
-            
-            if (savings > 0) {
-                const yearSavings = Math.round(savings * 12 - 199); // minus einmalig Setup
-                savingsInfo.textContent = `Monatliche Ersparniss: ${savings}€ × 12 - Setup 199€ = ${yearSavings}€ im Jahr 1. Kunden laden ~${sipgateAufladung}€ auf (Puffer eingerechnet).`;
-            } else {
-                savingsInfo.textContent = `Setup 199€ + ~${sipgateAufladung}€ Aufladung/Mo (Sipgate business L ${users} User × 17,95€ + Puffer). Danach sparen!`;
-            }
-        }
-
-        peopleInput.addEventListener('input', updateCalculator);
-        currentInput.addEventListener('input', updateCalculator);
-        updateCalculator();
-
-        // Mobile nav toggle
-        document.getElementById('hamburger')?.addEventListener('click', function() {
-            document.getElementById('mobile-nav')?.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
