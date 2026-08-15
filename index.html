@@ -165,6 +165,72 @@
             font-size: 0.95rem;
         }
 
+        /* Benefits Section */
+        .benefits-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #0d2541 0%, #1a3a5c 100%);
+        }
+
+        .benefits-section h2 {
+            font-size: 2.5rem;
+            color: #73CAFF;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .benefits-intro {
+            color: #b0d9ff;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            background: rgba(20, 50, 80, 0.6);
+            border: 1px solid rgba(77, 184, 255, 0.3);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-item:hover {
+            background: rgba(30, 70, 110, 0.8);
+            border-color: #73CAFF;
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.2rem;
+            color: #73CAFF;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .benefit-item p {
+            color: #b0d9ff;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
         /* Pricing Section */
         .pricing-section {
             padding: 4rem 2rem;
@@ -456,6 +522,7 @@
             }
 
             .features-section h2,
+            .benefits-section h2,
             .pricing-section h2,
             .calculator-section h2,
             .comparison-section h2,
@@ -465,6 +532,7 @@
             }
 
             .features-grid,
+            .benefits-grid,
             .pricing-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
@@ -503,6 +571,7 @@
             </a>
             <nav id="nav-desktop">
                 <a href="#features">Features</a>
+                <a href="#benefits">Vorteile</a>
                 <a href="#pricing">Preise</a>
                 <a href="#calculator">Kalkulator</a>
                 <a href="#contact" class="cta-button" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Demo buchen</a>
@@ -571,6 +640,98 @@
                     <div class="feature-icon">✉️</div>
                     <h3>SMS, Fax & mehr</h3>
                     <p>Nicht nur Telefonie. SMS-Versand, Fax-to-Email. Alles integriert.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warum Sipgate Section -->
+        <section class="benefits-section" id="benefits">
+            <h2>Warum Sipgate & WEBGUARDS statt klassischen Verträgen?</h2>
+            <p class="benefits-intro">Nicht einfach günstiger. Fundamental besser.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Schneller Rollout</h3>
+                    <p><strong>3–5 Tage</strong> von Unterschrift bis Live</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: 2–3 Wochen Wartezeit</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔗</div>
+                    <h3>Kein Vertrag</h3>
+                    <p><strong>Monatlich kündbar</strong>, kein Commitment</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: 24 Monate bindend</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Infinite Skalierbarkeit</h3>
+                    <p>Eine Nummer in <strong>5 Minuten</strong> hinzufügen</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Wochen, Techniker-Besuch</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🖥️</div>
+                    <h3>Keine Hardware</h3>
+                    <p><strong>100% Cloud</strong>. Kein Server, keine Wartung</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Teure Hardware, Updates, Backup</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔌</div>
+                    <h3>API & Webhooks</h3>
+                    <p>Anrufe an <strong>dein CRM</strong>, Automatisierung, Custom Workflows</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Nur proprietäre Integration möglich</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Echte Mobile App</h3>
+                    <p>Geschäftsnummer auf <strong>jedem Handy</strong> (iOS/Android)</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Separate SIM-Karten oder komplexe Workarounds</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Deutsche Infrastruktur</h3>
+                    <p><strong>100% DSGVO-konform</strong>, keine Daten in USA</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Oft internationale Clouds</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>30–50% günstiger</h3>
+                    <p><strong>17,95€/Anschluss</strong> vs. 30–40€ klassisch</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Ohne versteckte Setup-, Technik- oder Migrationkosten</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚙️</div>
+                    <h3>Automatisierung</h3>
+                    <p>Visual Routing, Webhooks, <strong>Workflows ohne Code</strong></p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Termin mit Techniker oder externe Entwickler</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">👤</div>
+                    <h3>Keine Techniker nötig</h3>
+                    <p><strong>WEBGUARDS macht's</strong>, du fokussierst dich auf Geschäft</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: IT-Team oder teurer externer Support</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Transparentes Dashboard</h3>
+                    <p><strong>Echtzeitdaten</strong> zu Anrufen, Kosten, Nutzung</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Intransparente Rechnungen, keine Live-Daten</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📞</div>
+                    <h3>Deutsch Support</h3>
+                    <p><strong>Sipgate + WEBGUARDS</strong> — beide sprechen deine Sprache</p>
+                    <p style="font-size: 0.85rem; color: #4db8ff;">Klassisch: Call-Center im Ausland, lange Wartezeiten</p>
                 </div>
             </div>
         </section>
