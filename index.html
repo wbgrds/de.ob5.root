@@ -600,6 +600,34 @@
             </div>
         </section>
 
+        <!-- Prepaid Model Section -->
+        <section style="padding: 4rem 1.5rem; background: linear-gradient(135deg, rgba(115, 202, 255, 0.05) 0%, rgba(13, 37, 65, 0.3) 100%); text-align: center;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: 1.5rem;">So funktioniert Sipgate Prepaid</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div style="background: rgba(13, 37, 65, 0.6); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #73CAFF;">
+                        <h3 style="color: #73CAFF; margin-bottom: 0.5rem;">1. Fixkosten berechnen</h3>
+                        <p>z.B. 5 User × 17,95€ = 52,80€/Monat</p>
+                    </div>
+                    
+                    <div style="background: rgba(13, 37, 65, 0.6); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #73CAFF;">
+                        <h3 style="color: #73CAFF; margin-bottom: 0.5rem;">2. Aufrunden (Puffer)</h3>
+                        <p>Kunde lädt typischerweise 60€ auf (Puffer für SMS, Add-ons)</p>
+                    </div>
+                    
+                    <div style="background: rgba(13, 37, 65, 0.6); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #73CAFF;">
+                        <h3 style="color: #73CAFF; margin-bottom: 0.5rem;">3. Transparent nutzen</h3>
+                        <p>Kein Überraschungen. Puffer wird durch SMS/Fax/Extras aufgebraucht.</p>
+                    </div>
+                </div>
+                
+                <p style="color: #b0d9ff; font-size: 0.95rem; line-height: 1.6;">
+                    <strong>Vorteil für deinen Kunden:</strong> Volle Transparenz. Er sieht genau, was verbraucht wird. Keine versteckten Gebühren wie bei klassischen Anbietern. Der Puffer gibt ihm Luft für SMS, Fax oder Premium-Features, ohne gleich die nächste Ebene buchen zu müssen.
+                </p>
+            </div>
+        </section>
+
         <!-- Features Section -->
         <section class="features-section" id="features">
             <h2>Features deines Sipgate-Accounts</h2>
@@ -739,7 +767,7 @@
         <!-- Pricing Section -->
         <section class="pricing-section" id="pricing">
             <h2>Transparente Preise</h2>
-            <p class="pricing-intro">Sipgate business L: 17,95€/User/Monat (mind. 2 Anschlüsse). Setup 199€ einmalig. Keine versteckten Gebühren.</p>
+            <p class="pricing-intro"><strong>Prepaid-Modell:</strong> Sipgate business L 17,95€/User/Monat. Kunden laden sich selbst auf (Puffer nach oben). Setup 199€ einmalig. Keine versteckten Gebühren, volle Transparenz.</p>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
@@ -855,10 +883,13 @@
                         </tr>
                         <tr>
                             <td><strong>Kosten (5 User/Mo)</strong></td>
-                            <td><strong>90€ + Setup 199€</strong></td>
+                            <td><strong>Ø 95€ Aufladung*</strong></td>
                             <td>200–250€</td>
                             <td>180–220€</td>
                             <td>300€+ Server</td>
+                        </tr>
+                        <tr style="background: rgba(115, 202, 255, 0.1);">
+                            <td colspan="5" style="font-size: 0.85rem; color: #b0d9ff; text-align: left;">* Sipgate Fixkosten: 89,75€ (5 User × 17,95€). Kunde lädt Puffer auf (z.B. 95€ für SMS/Add-ons). WEBGUARDS Provision: 10% der Aufladung. Setup 199€ einmalig.</td>
                         </tr>
                         <tr>
                             <td><strong>API & Webhooks</strong></td>
@@ -1030,7 +1061,7 @@
 
         animate();
 
-        // Calculator (Sipgate business L: 17,95€/User + 4,95€ je Zusatzanschluss)
+        // Calculator (Sipgate Prepaid: Kunden laden auf, WEBGUARDS bekommt 10% Provision)
         const peopleInput = document.getElementById('people');
         const currentInput = document.getElementById('current');
         const savingsDisplay = document.getElementById('savings');
@@ -1041,19 +1072,19 @@
             const current = parseInt(currentInput.value) || 0;
             
             // Sipgate business L: 17,95€/User/Monat (incl. 2 Anschlüsse)
-            // Ab 3 Anschlüssen pro User: +4,95€ pro zusätzliche Nummer
-            // Vereinfacht: bei durchschnittlich 2 Anschlüssen pro User
-            const sipgateMonthly = users * 17.95;
-            const sipgateEstimate = Math.round(sipgateMonthly);
-            const savings = Math.max(0, current - sipgateEstimate);
+            // Kunden laden typischerweise rund auf (z.B. 52,80€ → 60€)
+            // Ø Aufladung: Fixkosten + ~13% Puffer
+            const sipgateFixkosten = users * 17.95;
+            const sipgateAufladung = Math.ceil(sipgateFixkosten / 5) * 5; // Rund auf 5er
+            const savings = Math.max(0, current - sipgateFixkosten);
             
             savingsDisplay.textContent = savings + '€';
             
             if (savings > 0) {
                 const yearSavings = Math.round(savings * 12 - 199); // minus einmalig Setup
-                savingsInfo.textContent = `Monatliche Ersparniss: ${savings}€ × 12 - Setup 199€ = ${yearSavings}€ im Jahr 1`;
+                savingsInfo.textContent = `Monatliche Ersparniss: ${savings}€ × 12 - Setup 199€ = ${yearSavings}€ im Jahr 1. Kunden laden ~${sipgateAufladung}€ auf (Puffer eingerechnet).`;
             } else {
-                savingsInfo.textContent = `Setup 199€ + ${sipgateEstimate}€/Monat Sipgate (${users} User × business L 17,95€). Danach sparen!`;
+                savingsInfo.textContent = `Setup 199€ + ~${sipgateAufladung}€ Aufladung/Mo (Sipgate business L ${users} User × 17,95€ + Puffer). Danach sparen!`;
             }
         }
 
