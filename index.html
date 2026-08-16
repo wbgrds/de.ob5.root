@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OB5 - Moderne Cloud-Telefonie für Dein Team | WEBGUARDS & Sipgate</title>
-    <meta name="description" content="Cloud-Telefonie mit Sipgate + WEBGUARDS. DSGVO-konform, skalierbar, bezahlbar. Kostenlose Demo.">
+    <title>Sipgate Business Telefonie — ob5.de</title>
     <style>
         * {
             margin: 0;
@@ -12,104 +11,83 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #000000;
-            --accent: #FFFFFF;
-            --white: #FFFFFF;
-            --text: #1a1a1a;
-            --light-gray: #f5f5f5;
-            --border: #e0e0e0;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a3a52 100%);
+            color: #e0e0e0;
             line-height: 1.6;
-            color: var(--text);
-            background: var(--white);
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         /* Navigation */
         nav {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
+            z-index: 1000;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(13, 37, 65, 0.95);
+            border-bottom: 1px solid rgba(115, 202, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         nav .logo {
-            font-weight: 700;
             font-size: 1.5rem;
-            color: var(--primary);
+            font-weight: 600;
+            color: #FFFFFF;
         }
 
-        nav .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav .nav-links a {
-            color: var(--text);
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        nav .nav-links a:hover {
-            color: #666;
+        nav a {
+            color: #333333;
             text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            nav .nav-links {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
+        nav a:hover {
+            color: #FFFFFF;
         }
 
         /* Hero Section */
         .hero {
-            background: var(--primary);
-            color: var(--white);
-            padding: 6rem 2rem;
-            text-align: center;
-            min-height: 80vh;
+            position: relative;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            font-weight: 700;
-            line-height: 1.2;
+            color: #fff;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            color: #333333;
             margin-bottom: 2rem;
-            opacity: 0.95;
-            max-width: 700px;
         }
 
         .cta-buttons {
@@ -120,49 +98,38 @@
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
+            padding: 0.875rem 2rem;
             border: none;
-            cursor: pointer;
             border-radius: 6px;
-            transition: all 0.3s;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
             font-weight: 600;
         }
 
         .btn-primary {
-            background: var(--white);
-            color: var(--primary);
+            background: #FFFFFF;
+            color: #000000;
         }
 
         .btn-primary:hover {
-            background: #f0f0f0;
-            text-decoration: none;
+            background: #5fb8ed;
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            border: 2px solid var(--white);
+            background: rgba(115, 202, 255, 0.2);
+            color: #ffffff;
+            border: 1px solid #FFFFFF;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            text-decoration: none;
+            background: rgba(115, 202, 255, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero p {
-                font-size: 1.1rem;
-            }
-            .cta-buttons {
-                flex-direction: column;
-            }
-        }
-
-        /* Section Container */
+        /* Sections */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -173,342 +140,325 @@
             font-size: 2.5rem;
             margin-bottom: 3rem;
             text-align: center;
-            color: var(--primary);
+            color: #fff;
         }
 
-        /* Account Team Section */
-        .account-team {
-            background: var(--light-gray);
-        }
-
-        .team-container {
+        /* Arbeitsalltag Cards */
+        .alltag-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            max-width: 900px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .team-member {
-            text-align: center;
+        .alltag-card {
+            background: rgba(13, 37, 65, 0.8);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(115, 202, 255, 0.2);
+            transition: all 0.3s;
+            cursor: default;
         }
 
-        .team-member img {
-            width: 100%;
-            max-width: 250px;
-            height: 250px;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            background: var(--border);
+        .alltag-card:hover {
+            transform: translateY(-8px);
+            border-color: #FFFFFF;
+            background: rgba(13, 37, 65, 0.95);
         }
 
-        .team-member h3 {
+        .alltag-card h3 {
+            color: #FFFFFF;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: var(--primary);
         }
 
-        .team-member p {
-            color: #666;
+        .alltag-card .number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin: 1rem 0;
+        }
+
+        .alltag-card p {
+            color: #333333;
             font-size: 0.95rem;
         }
 
-        .team-description {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text);
-            line-height: 1.8;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .team-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        /* Problem Section */
-        .problem {
-            background: var(--white);
-        }
-
-        .problem-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            padding: 2rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--white);
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .card p {
-            color: #555;
-            line-height: 1.7;
-        }
-
-        /* Solution Section */
-        .solution {
-            background: var(--light-gray);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .solution-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .solution-text ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .solution-text li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: #555;
-        }
-
-        .solution-text li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .solution-image {
-            background: var(--border);
-            height: 400px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-
-        @media (max-width: 768px) {
-            .solution-grid {
-                grid-template-columns: 1fr;
-            }
-            .solution-image {
-                height: 250px;
-            }
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--white);
-        }
-
+        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
-        .feature-item {
+        .feature-card {
+            background: rgba(13, 37, 65, 0.6);
             padding: 1.5rem;
-            border-left: 4px solid var(--primary);
-            background: var(--light-gray);
-            border-radius: 4px;
+            border-radius: 8px;
+            border-left: 3px solid #FFFFFF;
         }
 
-        .feature-item h4 {
+        .feature-card h3 {
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
             font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
         }
 
-        .feature-item p {
-            font-size: 0.95rem;
-            color: #666;
+        .feature-card p {
+            color: #333333;
+            font-size: 0.9rem;
         }
 
-        /* Pricing Section */
-        .pricing {
-            background: var(--light-gray);
+        /* For-wen Section */
+        .for-wen {
+            background: rgba(115, 202, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            border-left: 3px solid #FFFFFF;
+            margin: 3rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .pricing-grid {
+        .for-wen p {
+            color: #333333;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Tarife */
+        .tarife-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .pricing-card {
-            background: var(--white);
+        .tarif-card {
+            background: rgba(13, 37, 65, 0.6);
             padding: 2rem;
             border-radius: 8px;
-            border: 2px solid var(--border);
+            border: 1px solid rgba(115, 202, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .tarif-card:hover {
+            border-color: #FFFFFF;
+            background: rgba(13, 37, 65, 0.8);
+        }
+
+        .tarif-card.bestseller {
+            border: 2px solid #FFFFFF;
+            background: rgba(13, 37, 65, 0.8);
+        }
+
+        .tarif-badge {
+            background: #FFFFFF;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
             text-align: center;
+            margin-bottom: 1rem;
         }
 
-        .pricing-card.featured {
-            border-color: var(--primary);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.3rem;
+        .tarif-card h3 {
+            color: #FFFFFF;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: var(--primary);
         }
 
-        .pricing-card .price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
+        .tarif-price {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 600;
             margin: 1rem 0;
         }
 
-        .pricing-card .price span {
-            font-size: 0.9rem;
-            color: #666;
+        .tarif-price-small {
+            color: #333333;
+            font-size: 0.95rem;
         }
 
-        .pricing-card ul {
+        .tarif-card ul {
             list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-            color: #555;
+            margin: 1.5rem 0;
         }
 
-        .pricing-card li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid var(--border);
+        .tarif-card li {
+            color: #333333;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
         }
 
-        .pricing-card .btn {
-            width: 100%;
-            margin-top: 1.5rem;
-        }
-
-        /* Comparison Section */
-        .comparison {
-            background: var(--white);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .comparison-table th {
-            background: var(--light-gray);
+        .tarif-card li:before {
+            content: "✓ ";
+            color: #FFFFFF;
             font-weight: 600;
-            color: var(--primary);
+            margin-right: 0.5rem;
         }
 
-        .comparison-table tr:hover {
-            background: var(--light-gray);
+        .tarif-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: #333333;
+            font-size: 0.9rem;
+        }
+
+        .tarif-note a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .tarif-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            background: rgba(13, 37, 65, 0.6);
+            padding: 1.25rem;
+            border-radius: 6px;
+            cursor: pointer;
+            border-left: 3px solid #FFFFFF;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(13, 37, 65, 0.8);
+        }
+
+        .faq-question h4 {
+            color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .faq-question.open .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            background: rgba(13, 37, 65, 0.4);
+            padding: 0;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .faq-answer.open {
+            padding: 1.25rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #333333;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         /* CTA Section */
-        .cta-final {
-            background: var(--primary);
-            color: var(--white);
+        .cta-section {
             text-align: center;
+            background: rgba(115, 202, 255, 0.05);
             padding: 4rem 2rem;
+            border-radius: 8px;
         }
 
-        .cta-final h2 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-final p {
-            font-size: 1.1rem;
+        .cta-section h2 {
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        .cta-info {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+
+        .cta-info p {
+            margin-bottom: 1rem;
+        }
+
+        .cta-info a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta-info a:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: left;
-        }
-
-        footer h4 {
-            margin-bottom: 1rem;
+            padding: 2.5rem;
+            border-top: 1px solid rgba(115, 202, 255, 0.2);
+            color: #333333;
+            font-size: 0.9rem;
         }
 
         footer a {
-            color: var(--white);
-            display: block;
-            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+            text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        footer .footer-bottom {
-            grid-column: 1 / -1;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            margin-top: 1rem;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             section {
                 padding: 3rem 1.5rem;
             }
 
             section h2 {
                 font-size: 1.8rem;
-                margin-bottom: 2rem;
             }
 
-            .features-grid,
-            .problem-cards,
-            .pricing-grid {
-                grid-template-columns: 1fr;
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
             }
         }
     </style>
@@ -516,268 +466,368 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">OB5</div>
-        <ul class="nav-links">
-            <li><a href="#team">Team</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Preise</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
+        <div class="logo">sipgate@OB5.DE</div>
+        <div>
+            <a onclick="scrollToSection('features')">Features</a>
+            <a onclick="scrollToSection('tarife')">Tarife</a>
+            <a onclick="scrollToSection('faq')">FAQ</a>
+            <a onclick="scrollToSection('kontakt')">Kontakt</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Moderne Cloud-Telefonie für Dein Team</h1>
-        <p>Sipgate + WEBGUARDS: Skalierbar, DSGVO-konform, bezahlbar. Ohne Vertragsfesseln.</p>
-        <div class="cta-buttons">
-            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Beratung vereinbaren</button>
-            <a href="https://sipgate.de" class="btn btn-secondary">Mehr über Sipgate</a>
-        </div>
-    </section>
+    <!-- Hero -->
+    
 
-    <!-- Account Team Section -->
-    <section class="account-team" id="team">
-        <h2>Dein dediziertes Account-Team</h2>
-        <div class="team-container">
-            <div class="team-member">
-                <img src="https://via.placeholder.com/250x250?text=Olaf" alt="Olaf Scharfenberg">
-                <h3>Olaf Scharfenberg</h3>
-                <p>Geschäftsführer WEBGUARDS<br>Sipgate Partner seit 2006</p>
-            </div>
-            <div class="team-member">
-                <img src="https://via.placeholder.com/250x250?text=Team" alt="Dein Support">
-                <h3>WEBGUARDS Team</h3>
-                <p>Dein dedizierter Support<br>Deutsch, erreichbar, zuverlässig</p>
-            </div>
-            <div class="team-description">
-                <strong>Zusammen mit unserem dedizierten Account-Team:</strong><br>
-                ✓ DSGVO-konforme Infrastruktur | ✓ Rollout ohne Unterbrechung | ✓ Lokaler Support in Rostock
-            </div>
-        </div>
-    </section>
+    
 
-    <!-- Problem Section -->
-    <section class="problem">
-        <h2>Das Problem mit alter Telefonie</h2>
-        <div class="problem-cards">
-            <div class="card">
-                <h3>💸 Teuer & Intransparent</h3>
-                <p>Klassische Anlagen kosten 150–250€/Monat + versteckte Setup- und Wartungsgebühren.</p>
-            </div>
-            <div class="card">
-                <h3>🐌 Unflexibel & Langsam</h3>
-                <p>Neue Nummer? Neue Person? 2–3 Wochen Wartezeit. Mit Cloud: 5 Minuten.</p>
-            </div>
-            <div class="card">
-                <h3>📵 Kein Remote</h3>
-                <p>Homeoffice? Unterwegs? Deine Geschäftsnummer ist an den Büroschreibtisch gebunden.</p>
-            </div>
-        </div>
-    </section>
+    
 
-    <!-- Solution Section -->
-    <section class="solution">
-        <h2>Die Lösung: Sipgate + WEBGUARDS</h2>
-        <div class="solution-grid">
-            <div class="solution-text">
-                <h3>Moderne Cloud-Telefonie für dein Business</h3>
-                <ul>
-                    <li>30–50% günstiger als klassische Anlagen</li>
-                    <li>Kein Vertrag — monatlich kündbar</li>
-                    <li>Deine Nummer überall (App, Handy, Browser)</li>
-                    <li>Skalierbar — Nutzer in 5 Minuten hinzufügen</li>
-                    <li>API & Webhooks für Automatisierung</li>
-                    <li>Deutsche Infrastruktur — DSGVO-konform</li>
-                    <li>SMS & Fax inklusive</li>
-                    <li>Wir kümmern uns darum — du fokussierst dich</li>
-                </ul>
-            </div>
-            <div class="solution-image">
-                Sipgate Dashboard Preview
-            </div>
-        </div>
-    </section>
+    <!-- Arbeitsalltag -->
+    
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2>Was du alles kannst</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <h4>📞 Call Monitor</h4>
-                <p>Live-Ansicht aller laufenden Anrufe im Team. Wer spricht gerade mit wem?</p>
-            </div>
-            <div class="feature-item">
-                <h4>📊 Call History & Reporting</h4>
-                <p>Jeden Anruf tracken. Statistiken für Management & Controlling.</p>
-            </div>
-            <div class="feature-item">
-                <h4>💬 SMS & Fax</h4>
-                <p>SMS und Fax über dieselbe Plattform. Integriert, nicht separat.</p>
-            </div>
-            <div class="feature-item">
-                <h4>🔌 API & Webhooks</h4>
-                <p>Anrufe an dein CRM, Slack-Benachrichtigungen, Custom Workflows.</p>
-            </div>
-            <div class="feature-item">
-                <h4>📱 Mobile App</h4>
-                <p>Deine Geschäftsnummer auf jedem Handy. Überall erreichbar.</p>
-            </div>
-            <div class="feature-item">
-                <h4>🎙️ Sprachmenü (IVR)</h4>
-                <p>Automatische Anrufbearbeitung. "Drücke 1 für Vertrieb, 2 für Support."</p>
-            </div>
-        </div>
-    </section>
+    <!-- Features -->
+    
 
-    <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
-        <h2>Transparente Preisgestaltung</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <div class="price">ab <span>17,95€</span></div>
-                <p>pro Nutzer/Monat</p>
-                <ul>
-                    <li>✓ 1–3 Anschlüsse</li>
-                    <li>✓ Call Monitor</li>
-                    <li>✓ SMS & Fax</li>
-                    <li>✓ Mobile App</li>
-                    <li>✓ Email Support</li>
-                </ul>
-                <button class="btn btn-primary">Infos anfragen</button>
-            </div>
-            <div class="pricing-card featured">
-                <h3>⭐ Professional</h3>
-                <div class="price">ab <span>17,95€</span></div>
-                <p>pro Nutzer/Monat</p>
-                <ul>
-                    <li>✓ Alles aus Starter</li>
-                    <li>✓ Sprachmenü (IVR)</li>
-                    <li>✓ Call History & Reporting</li>
-                    <li>✓ Workflows & Automation</li>
-                    <li>✓ Telefon Support</li>
-                </ul>
-                <button class="btn btn-primary">Beratung vereinbaren</button>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <div class="price">Custom</div>
-                <p>Maßgeschneidert</p>
-                <ul>
-                    <li>✓ API & Webhooks</li>
-                    <li>✓ Integrations (CRM, Ticketing)</li>
-                    <li>✓ Dedicated Account Manager</li>
-                    <li>✓ SLA & Custom Workflows</li>
-                    <li>✓ Priori Support</li>
-                </ul>
-                <button class="btn btn-primary">Angebot anfordern</button>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 3rem; color: #666; font-size: 0.9rem;">
-            <p><strong>Setup-Fee:</strong> 199€ (einmalig)</p>
-            <p>Alle Preise zzgl. MwSt. | Monatlich kündbar | Kein Vertrag</p>
-        </div>
-    </section>
+    <!-- Für wen -->
+    
 
-    <!-- Comparison Section -->
-    <section class="comparison">
-        <h2>Warum Sipgate + WEBGUARDS?</h2>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th style="color: var(--primary); font-weight: 700;">Sipgate + WEBGUARDS</th>
-                    <th>Telekom Business</th>
-                    <th>3CX on Premise</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Monatliche Kosten (5 Nutzer)</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">ab 95€</td>
-                    <td>199€+</td>
-                    <td>150€+ (Hardware)</td>
-                </tr>
-                <tr>
-                    <td><strong>Setup-Zeit</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">3–5 Tage</td>
-                    <td>2–3 Wochen</td>
-                    <td>4 Wochen+</td>
-                </tr>
-                <tr>
-                    <td><strong>Neuer Nutzer hinzufügen</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">5 Minuten</td>
-                    <td>2–3 Tage</td>
-                    <td>1 Stunde (Admin)</td>
-                </tr>
-                <tr>
-                    <td><strong>Vertragstype</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">Monatlich kündbar</td>
-                    <td>24 Monate</td>
-                    <td>Je nach Vendor</td>
-                </tr>
-                <tr>
-                    <td><strong>DSGVO-konform</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">✓ Deutsche Server</td>
-                    <td>✓</td>
-                    <td>Je nach Setup</td>
-                </tr>
-                <tr>
-                    <td><strong>Mobile App</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">✓ Integriert</td>
-                    <td>✓ Zusatzgebühr</td>
-                    <td>Je nach Plugin</td>
-                </tr>
-                <tr>
-                    <td><strong>API & Webhooks</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">✓ Standard</td>
-                    <td>Eingeschränkt</td>
-                    <td>✓ Umfangreich</td>
-                </tr>
-                <tr>
-                    <td><strong>Support</strong></td>
-                    <td style="color: var(--primary); font-weight: 600;">Deutsch, lokal</td>
-                    <td>Deutsch</td>
-                    <td>Verschiedene Level</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+    <!-- Tarife -->
+    
 
-    <!-- Final CTA Section -->
-    <section class="cta-final" id="contact">
-        <h2>Bereit für moderne Telefonie?</h2>
-        <p>Lass dich von uns beraten. 30 Minuten, kostenlos, unverbindlich.</p>
-        <div class="cta-buttons">
-            <a href="mailto:sipgate@webguards.de" class="btn btn-primary">sipgate@webguards.de</a>
-            <a href="tel:03812744835" class="btn btn-secondary">Telefon: 0381-2744835</a>
-        </div>
-    </section>
+    <!-- FAQ -->
+    
+
+    <!-- CTA Section -->
+    
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div>
-                <h4>OB5</h4>
-                <p>Cloud-Telefonie für Dein Team. Von WEBGUARDS & Sipgate.</p>
-            </div>
-            <div>
-                <h4>Links</h4>
-                <a href="#features">Features</a>
-                <a href="#pricing">Preise</a>
-                <a href="https://sipgate.de" target="_blank">Sipgate</a>
-                <a href="https://webguards.de" target="_blank">WEBGUARDS</a>
-            </div>
-            <div>
-                <h4>Kontakt</h4>
-                <a href="mailto:sipgate@webguards.de">sipgate@webguards.de</a>
-                <a href="tel:03812744835">0381-2744835</a>
-                <p>Rostock, Deutschland</p>
+    <section class="hero" id="hero">
+        <canvas id="canvas"></canvas>
+        <div class="hero-content">
+            <h1>Ihre Büronummer auf dem Smartphone</h1>
+            <p>Mit sipgate telefonieren Ihre Mitarbeitenden auch unterwegs unter der geschäftlichen Rufnummer. Eine sipgate SIM oder eSIM macht das Smartphone zur mobilen Nebenstelle Ihrer Cloud-Telefonanlage.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" style="color: #000000 !important;" onclick="scrollToSection('kontakt')">Demo anfragen</button>
+                <a href="https://www.sipgate.de/partner/620359306" class="btn btn-primary" style="color: #000000 !important;" target="_blank">Zu sipgate.de</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 OB5.de by WEBGUARDS. <a href="#">Datenschutz</a> | <a href="#">Impressum</a></p>
+    </section>
+
+<!-- Video Section -->
+    <section id="video" style="padding: 5rem 2rem;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid rgba(115, 202, 255, 0.2);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                    src="https://www.youtube.com/embed/U8gw0LP0OfE" 
+                    title="Sipgate Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
+    </section>
+
+<section id="alltag">
+        <h2>So funktioniert's im Alltag</h2>
+        <div class="alltag-grid">
+            <div class="alltag-card">
+                <h3>Vormittags im Büro</h3>
+                <div class="number">0381-2744835</div>
+                <p>Tischtelefon, Headset oder Softphone — die Büronummer ist überall erreichbar</p>
+            </div>
+            <div class="alltag-card">
+                <h3>Nachmittags im Homeoffice</h3>
+                <div class="number">0381-2744835</div>
+                <p>Laptop, Tablet oder Smartphone — ohne Umschaltung, dieselbe Nummer</p>
+            </div>
+            <div class="alltag-card">
+                <h3>Unterwegs beim Kunden</h3>
+                <div class="number">0381-2744835</div>
+                <p>Mit sipgate SIM, eSIM oder App — die Büronummer ist auch mobil dabei</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: #333333; font-size: 1rem; margin-top: 2rem;"><strong>Der Kunde sieht immer: Dieselbe Nummer. Professionell. Zuverlässig.</strong></p>
+    </section>
+
+<section id="features">
+        <h2>Features von Sipgate</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Call Monitor</h3>
+                <p>Echtzeit-Übersicht aller Anrufe, Teilnehmer und Status</p>
+            </div>
+            <div class="feature-card">
+                <h3>Call History</h3>
+                <p>Vollständiges Anrufprotokoll mit Dauer, Datum und Teilnehmern</p>
+            </div>
+            <div class="feature-card">
+                <h3>Sprachmenü (IVR)</h3>
+                <p>Automatische Anrufverwaltung — Anrufe intelligent weiterleiten</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mobile App</h3>
+                <p>Geschäftsnummer auf jedem Smartphone — auch unterwegs erreichbar</p>
+            </div>
+            <div class="feature-card">
+                <h3>API & Webhooks</h3>
+                <p>Integration in bestehende Systeme und CRM-Software</p>
+            </div>
+            <div class="feature-card">
+                <h3>SMS & Fax</h3>
+                <p>SMS und Fax inklusive — alles aus der Cloud verwalten</p>
+            </div>
+            <div class="feature-card">
+                <h3>Zeitbasierte Weiterleitungen</h3>
+                <p>Anrufe automatisch nach Uhrzeit oder Arbeitstag umleiten</p>
+            </div>
+            <div class="feature-card">
+                <h3>100% Cloud</h3>
+                <p>Keine Hardware im Büro — alles läuft online und sicher</p>
+            </div>
+        </div>
+    </section>
+
+<section id="for-wen">
+        <div class="for-wen">
+            <h3 style="color: #FFFFFF; margin-bottom: 1rem;">Für wen ist Sipgate geeignet?</h3>
+            <p>Sipgate ist ideal für kleine und mittlere Teams, die flexibel arbeiten und moderne Technologie nutzen möchten. Ob Makler, Agenturen, Support-Teams oder Einzelunternehmer — wenn Ihre Mitarbeitenden mobil erreichbar sein müssen und die Büronummer immer verfügbar sein soll, ist Sipgate die richtige Wahl. Keine Hardware, keine langfristigen Verträge, volle Kontrolle über Ihre Telefonie.</p>
+        </div>
+    </section>
+
+<section id="tarife">
+        <h2>Sipgate Tarife</h2>
+        <div class="tarife-grid">
+            <div class="tarif-card">
+                <h3>business S</h3>
+                <div class="tarif-price">12,95€<span class="tarif-price-small">/User/Monat</span></div>
+                <ul>
+                    <li>2 Anschlüsse pro Nutzer</li>
+                    <li>Telefonie & Voicemail</li>
+                    <li>Call History</li>
+                    <li>Mobile App</li>
+                    <li>150+ Funktionen</li>
+                </ul>
+                <button class="btn btn-secondary" style="width: 100%; color: #ffffff !important;" onclick="scrollToSection('kontakt')">Infos anfragen</button>
+            </div>
+
+            <div class="tarif-card bestseller">
+                <div class="tarif-badge">Beliebt</div>
+                <h3>business L</h3>
+                <div class="tarif-price">17,95€<span class="tarif-price-small">/User/Monat</span></div>
+                <ul>
+                    <li>Alles von business S</li>
+                    <li>Festnetz-Flatrate DE</li>
+                    <li>Sprachmenü (IVR)</li>
+                    <li>Besetzlampenfeld</li>
+                    <li>Conversation Intelligence</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%; color: #000000 !important;" onclick="scrollToSection('kontakt')">Demo anfragen</button>
+            </div>
+
+            <div class="tarif-card">
+                <h3>business XL</h3>
+                <div class="tarif-price">22,95€<span class="tarif-price-small">/User/Monat</span></div>
+                <ul>
+                    <li>Alles von business L</li>
+                    <li>Festnetz-Flatrate EU</li>
+                    <li>Erweiterte AI-Features</li>
+                    <li>Premium Support</li>
+                </ul>
+                <button class="btn btn-secondary" style="width: 100%; color: #ffffff !important;" onclick="scrollToSection('kontakt')">Infos anfragen</button>
+            </div>
+        </div>
+
+        <div class="tarif-note">
+            <p><strong>Minimum 2 Nutzer pro Tarif.</strong> Zusatzanschlüsse: 4,95€/Monat.<br>
+            <a href="https://www.sipgate.de/partner/620359306" target="_blank">Alle Preise und Details auf sipgate.de/preise →</a></p>
+        </div>
+    </section>
+
+<!-- Partnerlinks Section -->
+    <section id="partnerlinks" style="padding: 5rem 2rem; background: rgba(115, 202, 255, 0.03);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: #fff;">Welches Produkt ist für Sie geeignet?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            
+            <!-- sipgate -->
+            <div style="background: rgba(13, 37, 65, 0.6); padding: 2rem; border-radius: 8px; border: 1px solid rgba(115, 202, 255, 0.2); transition: all 0.3s;">
+                <p style="color: #333333; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">Sie haben keine Telefonanlage</p>
+<button onclick="window.open('https://www.sipgate.de/partner/620359306', '_blank')" style="width: 100%; padding: 0.75rem; background: #FFFFFF; color: #000000; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#5fb8ed'" onmouseout="this.style.background='#FFFFFF'">→ sipgate</button>
+            </div>
+
+            <!-- sipgate trunking -->
+            <div style="background: rgba(13, 37, 65, 0.6); padding: 2rem; border-radius: 8px; border: 1px solid rgba(115, 202, 255, 0.2); transition: all 0.3s;">
+                <p style="color: #333333; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">Sie haben bereits eine eigene VoIP-Telefonanlage</p>
+<button onclick="window.open('https://www.sipgate.de/trunking/p/620359306', '_blank')" style="width: 100%; padding: 0.75rem; background: #FFFFFF; color: #000000; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#5fb8ed'" onmouseout="this.style.background='#FFFFFF'">→ sipgate trunking</button>
+            </div>
+
+            <!-- satellite Business -->
+            <div style="background: rgba(13, 37, 65, 0.6); padding: 2rem; border-radius: 8px; border: 1px solid rgba(115, 202, 255, 0.2); transition: all 0.3s;">
+                <p style="color: #333333; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">Ihre Mitarbeitenden telefonieren hauptsächlich mobil per App</p>
+<button onclick="window.open('https://signup.sipgate.de/partner/620359306/satelliteBusiness', '_blank')" style="width: 100%; padding: 0.75rem; background: #FFFFFF; color: #000000; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#5fb8ed'" onmouseout="this.style.background='#FFFFFF'">→ satellite Business</button>
+            </div>
+
+            <!-- sipgate AI Agents -->
+            <div style="background: rgba(13, 37, 65, 0.6); padding: 2rem; border-radius: 8px; border: 1px solid rgba(115, 202, 255, 0.2); transition: all 0.3s;">
+                <p style="color: #333333; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6;">Sie möchten Anrufe automatisiert durch KI bearbeiten lassen</p>
+<button onclick="window.open('https://signup.sipgate.de/partner/620359306/frontdesk', '_blank')" style="width: 100%; padding: 0.75rem; background: #FFFFFF; color: #000000; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#5fb8ed'" onmouseout="this.style.background='#FFFFFF'">→ sipgate AI Agents</button>
+            </div>
+
+        </div>
+    </section>
+
+<section id="faq">
+        <h2>Häufige Fragen</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Was ist ein Endpunkt? <span class="faq-toggle">▼</span></h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Ein Endpunkt ist ein Gerät oder eine Nebenstelle — zum Beispiel ein Tischtelefon, Softphone oder Smartphone. Jeder Nutzer hat 2 Endpunkte inklusive. Damit können Sie zum Beispiel gleichzeitig am Tischtelefon im Büro und auf dem Smartphone erreichbar sein.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Wie bekommt mein Mitarbeiter die Büronummer auf sein Smartphone? <span class="faq-toggle">▼</span></h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Mit einer sipgate SIM oder eSIM. Das Smartphone wird dann zur mobilen Nebenstelle der Telefonanlage. Ihre Mitarbeitenden können unter der Büronummer telefonieren, während ihre private Mobilfunknummer privat bleibt.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Bleibt meine private Handy-Nummer privat? <span class="faq-toggle">▼</span></h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Ja. Mit der sipgate SIM oder eSIM telefonieren Ihre Mitarbeitenden unter der Büronummer. Ihre Anrufer sehen nur die geschäftliche Rufnummer. Die private Nummer bleibt privat und unsichtbar.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Brauche ich eine Telefonanlage im Büro? <span class="faq-toggle">▼</span></h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Nein. Sipgate ist 100% Cloud. Es läuft alles online — Sie brauchen keine Hardware im Büro, keine Server, keine Techniker vor Ort. Sie kümmern sich um Ihr Business, wir um die Telefonie.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Bin ich an einen Vertrag gebunden? <span class="faq-toggle">▼</span></h4>
+                </div>
+                <div class="faq-answer">
+                    <p>Nein. Sipgate ist monatlich kündbar, ohne Kündigungsfrist. Sie können jederzeit stoppen oder erweitern. Maximale Flexibilität für Ihr Unternehmen.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h4>Wie läuft das Setup ab? <span class="faq-toggle">▼</span></h4>
+                </div>
+                <div class="faq-answer">
+                    <p>WEBGUARDS kümmert sich um alles: Beratung, Konfiguration, Migration. Die Setup-Gebühr liegt bei 199€. Nach 3–5 Tagen sind Sie live. Das ist unser Service — Sie fokussieren sich auf Ihr Business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="kontakt" class="cta-section">
+        <h2>Bereit für moderne Telefonie?</h2>
+        <p style="font-size: 1.1rem; color: #333333; margin-bottom: 2rem;">Kostenlose Demo oder Beratung — wir helfen Ihnen gerne weiter</p>
+        <div class="cta-buttons">
+            <a href="https://cal.com/wbgrds/sipgate" target="_blank" class="btn btn-primary" style="color: #000000 !important;">Termin buchen</a>
+            <a href="tel:03812744835" class="btn btn-primary" style="color: #000000 !important;">Telefon: 0381-2744835</a>
+        </div>
+    </section>
+
+<footer>
+        <p>&copy; 2026 OB5.DE by WEBGUARDS</p>
+
     </footer>
+
+    <script>
+        // Canvas Animation
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Particle system
+        const particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.radius = Math.random() * 2 + 1;
+                this.opacity = Math.random() * 0.5 + 0.3;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(115, 202, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Initialize particles
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(13, 37, 65, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Scroll navigation
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const question = element;
+            const answer = element.nextElementSibling;
+
+            question.classList.toggle('open');
+            answer.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
