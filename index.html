@@ -13,8 +13,8 @@
         }
 
         :root {
-            --primary: #0d2541;
-            --accent: #73CAFF;
+            --primary: #000000;
+            --accent: #FFFFFF;
             --white: #FFFFFF;
             --text: #1a1a1a;
             --light-gray: #f5f5f5;
@@ -69,7 +69,7 @@
         }
 
         nav .nav-links a:hover {
-            color: var(--accent);
+            color: #666;
             text-decoration: none;
         }
 
@@ -87,7 +87,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #1a3a52 100%);
+            background: var(--primary);
             color: var(--white);
             padding: 6rem 2rem;
             text-align: center;
@@ -130,12 +130,12 @@
         }
 
         .btn-primary {
-            background: var(--accent);
+            background: var(--white);
             color: var(--primary);
         }
 
         .btn-primary:hover {
-            background: #5ab3e8;
+            background: #f0f0f0;
             text-decoration: none;
         }
 
@@ -293,7 +293,7 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: var(--primary);
             font-weight: bold;
             font-size: 1.2rem;
         }
@@ -330,7 +330,7 @@
 
         .feature-item {
             padding: 1.5rem;
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--primary);
             background: var(--light-gray);
             border-radius: 4px;
         }
@@ -366,8 +366,8 @@
         }
 
         .pricing-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(115, 202, 255, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .pricing-card h3 {
@@ -379,7 +379,7 @@
         .pricing-card .price {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--primary);
             margin: 1rem 0;
         }
 
@@ -435,7 +435,7 @@
 
         /* CTA Section */
         .cta-final {
-            background: linear-gradient(135deg, var(--primary) 0%, #1a3a52 100%);
+            background: var(--primary);
             color: var(--white);
             text-align: center;
             padding: 4rem 2rem;
@@ -456,7 +456,7 @@
 
         /* Footer */
         footer {
-            background: var(--text);
+            background: var(--primary);
             color: var(--white);
             padding: 3rem 2rem;
             text-align: center;
@@ -477,9 +477,13 @@
         }
 
         footer a {
-            color: var(--accent);
+            color: var(--white);
             display: block;
             margin-bottom: 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         footer .footer-bottom {
@@ -682,7 +686,7 @@
             <thead>
                 <tr>
                     <th>Feature</th>
-                    <th style="color: var(--accent);">Sipgate + WEBGUARDS</th>
+                    <th style="color: var(--primary); font-weight: 700;">Sipgate + WEBGUARDS</th>
                     <th>Telekom Business</th>
                     <th>3CX on Premise</th>
                 </tr>
@@ -690,49 +694,49 @@
             <tbody>
                 <tr>
                     <td><strong>Monatliche Kosten (5 Nutzer)</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">ab 95€</td>
+                    <td style="color: var(--primary); font-weight: 600;">ab 95€</td>
                     <td>199€+</td>
                     <td>150€+ (Hardware)</td>
                 </tr>
                 <tr>
                     <td><strong>Setup-Zeit</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">3–5 Tage</td>
+                    <td style="color: var(--primary); font-weight: 600;">3–5 Tage</td>
                     <td>2–3 Wochen</td>
                     <td>4 Wochen+</td>
                 </tr>
                 <tr>
                     <td><strong>Neuer Nutzer hinzufügen</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">5 Minuten</td>
+                    <td style="color: var(--primary); font-weight: 600;">5 Minuten</td>
                     <td>2–3 Tage</td>
                     <td>1 Stunde (Admin)</td>
                 </tr>
                 <tr>
                     <td><strong>Vertragstype</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">Monatlich kündbar</td>
+                    <td style="color: var(--primary); font-weight: 600;">Monatlich kündbar</td>
                     <td>24 Monate</td>
                     <td>Je nach Vendor</td>
                 </tr>
                 <tr>
                     <td><strong>DSGVO-konform</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">✓ Deutsche Server</td>
+                    <td style="color: var(--primary); font-weight: 600;">✓ Deutsche Server</td>
                     <td>✓</td>
                     <td>Je nach Setup</td>
                 </tr>
                 <tr>
                     <td><strong>Mobile App</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">✓ Integriert</td>
+                    <td style="color: var(--primary); font-weight: 600;">✓ Integriert</td>
                     <td>✓ Zusatzgebühr</td>
                     <td>Je nach Plugin</td>
                 </tr>
                 <tr>
                     <td><strong>API & Webhooks</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">✓ Standard</td>
+                    <td style="color: var(--primary); font-weight: 600;">✓ Standard</td>
                     <td>Eingeschränkt</td>
                     <td>✓ Umfangreich</td>
                 </tr>
                 <tr>
                     <td><strong>Support</strong></td>
-                    <td style="color: var(--accent); font-weight: 600;">Deutsch, lokal</td>
+                    <td style="color: var(--primary); font-weight: 600;">Deutsch, lokal</td>
                     <td>Deutsch</td>
                     <td>Verschiedene Level</td>
                 </tr>
