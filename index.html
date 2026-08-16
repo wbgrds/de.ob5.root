@@ -512,8 +512,9 @@
             <img src="678900e941dcd8f65b451a42_sipgate_logo_black.svg" alt="Sipgate" style="height: 30px;">
             <span class="logo-divider"></span>
             <img src="logo.svg" alt="WEBGUARDS" style="height: 30px; width: auto;">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
         </div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a onclick="scrollToSection('features')">Features</a>
             <a onclick="scrollToSection('tarife')">Tarife</a>
             <a onclick="scrollToSection('faq')">FAQ</a>
@@ -793,6 +794,12 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+
         // Canvas Animation
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
