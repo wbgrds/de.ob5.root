@@ -399,28 +399,65 @@
         /* CTA Section */
         .cta-section {
             text-align: center;
-            background: rgba(100, 100, 100, 0.05);
+            background: #f5f5f5;
             padding: 4rem 2rem;
             border-radius: 8px;
         }
 
         .cta-section h2 {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            color: #333333;
         }
 
-        .cta-info {
-            margin: 2rem 0;
-            font-size: 1.1rem;
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
         }
 
-        .cta-info p {
-            margin-bottom: 1rem;
+        .profile-circles {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .cta-info a {
-            color: #444444;
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image:first-child {
+            margin-right: -40px;
+            z-index: 2;
+        }
+
+        .profile-image:last-child {
+            z-index: 1;
+        }
+
+        .cta-button {
+            background: #333333;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #555555;
         }
 
         .cta-info a:hover {
@@ -501,6 +538,25 @@
 
             .btn {
                 width: 100%;
+            }
+        
+            .profile-circles {
+                width: 100%;
+                height: 160px;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .profile-image:first-child {
+                margin-right: -30px;
+            }
+
+            .cta-button {
+                width: 90%;
+                max-width: 300px;
             }
         }
     </style>
@@ -781,10 +837,12 @@
 
 <section id="kontakt" class="cta-section">
         <h2>Bereit für moderne Telefonie?</h2>
-        <p style="font-size: 1.1rem; color: #555555; margin-bottom: 2rem;">Kostenlose Demo oder Beratung — wir helfen Ihnen gerne weiter</p>
-        <div class="cta-buttons">
-            <a href="https://cal.com/wbgrds/sipgate" target="_blank" class="btn btn-primary" style="color: #f8f8f8 !important;">Termin buchen</a>
-            <a href="tel:03812744835" class="btn btn-primary" style="color: #f8f8f8 !important;">Telefon: 0381-2744835</a>
+        <div class="cta-container">
+            <div class="profile-circles">
+                <img src="profile-1.jpg" alt="Berater" class="profile-image">
+                <img src="profile-2.jpg" alt="Berater" class="profile-image">
+            </div>
+            <a href="https://cal.com/wbgrds/sipgate" target="_blank" class="cta-button">Beratung vereinbaren</a>
         </div>
     </section>
 
